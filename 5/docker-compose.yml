@@ -1,0 +1,24 @@
+version: '3'
+services:
+ web:
+    image: dmugnginx
+    ports:
+        - "8080:80"
+    volumes:
+        - ./www:/var/www
+       
+    links:
+        - php
+    networks:
+      - dmug
+    restart: always
+ php:
+    image: dmugphp
+    volumes:
+        - ./www:/var/www
+    networks:
+      - dmug
+
+networks:
+  dmug:
+  
