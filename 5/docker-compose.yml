@@ -1,7 +1,9 @@
 version: '3'
 services:
  web:
-    image: dmugnginx
+    image: json1/dmugnginx
+    container_name: nginxdmug
+    restart: unless-stopped
     ports:
         - "8080:80"
     volumes:
@@ -12,8 +14,12 @@ services:
     networks:
       - dmug
     restart: always
+    depends_on:
+      - php
  php:
-    image: dmugphp
+    image: json1/dmugphp
+    container_name: phpdmug
+    restart: unless-stopped
     volumes:
         - ./www:/var/www
     networks:
