@@ -1,0 +1,2784 @@
+Cloud-init v. 19.2-36-g059d049c-0ubuntu1~18.04.1 running 'init-local' at Thu, 31 Oct 2019 09:10:08 +0000. Up 9.94 seconds.
+Cloud-init v. 19.2-36-g059d049c-0ubuntu1~18.04.1 running 'init' at Thu, 31 Oct 2019 09:10:11 +0000. Up 12.98 seconds.
+ci-info: ++++++++++++++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++++++++++++++
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: | Device |  Up  |           Address           |      Mask     | Scope  |     Hw-Address    |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: |  ens5  | True |         172.31.40.88        | 255.255.240.0 | global | 0a:20:83:2d:c0:d8 |
+ci-info: |  ens5  | True | fe80::820:83ff:fe2d:c0d8/64 |       .       |  link  | 0a:20:83:2d:c0:d8 |
+ci-info: |   lo   | True |          127.0.0.1          |   255.0.0.0   |  host  |         .         |
+ci-info: |   lo   | True |           ::1/128           |       .       |  host  |         .         |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: ++++++++++++++++++++++++++++++Route IPv4 info++++++++++++++++++++++++++++++
+ci-info: +-------+-------------+-------------+-----------------+-----------+-------+
+ci-info: | Route | Destination |   Gateway   |     Genmask     | Interface | Flags |
+ci-info: +-------+-------------+-------------+-----------------+-----------+-------+
+ci-info: |   0   |   0.0.0.0   | 172.31.32.1 |     0.0.0.0     |    ens5   |   UG  |
+ci-info: |   1   | 172.31.32.0 |   0.0.0.0   |  255.255.240.0  |    ens5   |   U   |
+ci-info: |   2   | 172.31.32.1 |   0.0.0.0   | 255.255.255.255 |    ens5   |   UH  |
+ci-info: +-------+-------------+-------------+-----------------+-----------+-------+
+ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: | Route | Destination | Gateway | Interface | Flags |
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: |   1   |  fe80::/64  |    ::   |    ens5   |   U   |
+ci-info: |   3   |    local    |    ::   |    ens5   |   U   |
+ci-info: |   4   |   ff00::/8  |    ::   |    ens5   |   U   |
+ci-info: +-------+-------------+---------+-----------+-------+
+Generating public/private rsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_rsa_key.
+Your public key has been saved in /etc/ssh/ssh_host_rsa_key.pub.
+The key fingerprint is:
+SHA256:YGWicUCEHZZzpDh6D3dczAVcLYn5hwpCh4y191Ji1Js root@ip-172-31-40-88
+The key's randomart image is:
++---[RSA 2048]----+
+|   OO*=o+=oo     |
+|  ooBBo*=.o .    |
+|  o.++* =+ o     |
+| . ..=.*E o .    |
+|. o ..+.S. .     |
+| . + . ..        |
+|    .            |
+|                 |
+|                 |
++----[SHA256]-----+
+Generating public/private dsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_dsa_key.
+Your public key has been saved in /etc/ssh/ssh_host_dsa_key.pub.
+The key fingerprint is:
+SHA256:FM4uay4XGk8RDqEfE74HdIHqltlZpKrBOw/YZt/vgng root@ip-172-31-40-88
+The key's randomart image is:
++---[DSA 1024]----+
+|    +oo..        |
+|   +oooo .       |
+|  ..== .+        |
+|  ...=+o         |
+|.. =ooo.S        |
+|oo* +.oo         |
+|.==. *o.         |
+|.=o.E++          |
+|  oo.oo+o        |
++----[SHA256]-----+
+Generating public/private ecdsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_ecdsa_key.
+Your public key has been saved in /etc/ssh/ssh_host_ecdsa_key.pub.
+The key fingerprint is:
+SHA256:/Y2v4oCzmSII4ZeeFpMwRtca2URjdfd2GhzFtomeB7M root@ip-172-31-40-88
+The key's randomart image is:
++---[ECDSA 256]---+
+|    *=.. . . .o. |
+| . +.o. . . o .o |
+|. . o        =o.o|
+|.+ .     .  .++o |
+|o.o o   S . ..=  |
+|.. *   .   . E . |
+|..o + o .   o o  |
+|. .+.  = ..  .   |
+|  .. .+  ......  |
++----[SHA256]-----+
+Generating public/private ed25519 key pair.
+Your identification has been saved in /etc/ssh/ssh_host_ed25519_key.
+Your public key has been saved in /etc/ssh/ssh_host_ed25519_key.pub.
+The key fingerprint is:
+SHA256:GMe6McNGDPfvquR+h1JsFrroYrkV3IBvEJp31NmkM8Y root@ip-172-31-40-88
+The key's randomart image is:
++--[ED25519 256]--+
+|  . o..+.        |
+| o + =o+.        |
+|o + o E +        |
+| . = * B..       |
+|    = XoS..      |
+|   . o.==.       |
+|   ...o= ..      |
+|  +..oo o..      |
+| ..+..++..       |
++----[SHA256]-----+
+Cloud-init v. 19.2-36-g059d049c-0ubuntu1~18.04.1 running 'modules:config' at Thu, 31 Oct 2019 09:10:22 +0000. Up 24.76 seconds.
++ export DEBIAN_FRONTEND=noninteractive
++ DEBIAN_FRONTEND=noninteractive
++ apt-get update
+Hit:1 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic InRelease
+Get:2 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:3 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+Get:4 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:5 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [8570 kB]
+Get:6 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [545 kB]
+Get:7 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/universe Translation-en [4941 kB]
+Get:8 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [151 kB]
+Get:9 http://security.ubuntu.com/ubuntu bionic-security/main Translation-en [182 kB]
+Get:10 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/multiverse Translation-en [108 kB]
+Get:11 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [768 kB]
+Get:12 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main Translation-en [275 kB]
+Get:13 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [9856 B]
+Get:14 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [16.7 kB]
+Get:15 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/restricted Translation-en [5144 B]
+Get:16 http://security.ubuntu.com/ubuntu bionic-security/restricted Translation-en [3480 B]
+Get:17 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1018 kB]
+Get:18 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [617 kB]
+Get:19 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [313 kB]
+Get:20 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [8096 B]
+Get:21 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/multiverse Translation-en [3972 B]
+Get:22 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [2512 B]
+Get:23 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-backports/main Translation-en [1644 B]
+Get:24 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [4020 B]
+Get:25 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [1856 B]
+Get:26 http://security.ubuntu.com/ubuntu bionic-security/universe Translation-en [206 kB]
+Get:27 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [5476 B]
+Get:28 http://security.ubuntu.com/ubuntu bionic-security/multiverse Translation-en [2500 B]
+Fetched 18.0 MB in 4s (4178 kB/s)
+Reading package lists...
++ apt-get -y upgrade
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages have been kept back:
+  linux-aws linux-headers-aws linux-image-aws
+The following packages will be upgraded:
+  apport base-files cloud-init distro-info-data file libidn2-0 libmagic-mgc
+  libmagic1 libnss-systemd libpam-systemd libpython3.6 libpython3.6-minimal
+  libpython3.6-stdlib libsystemd0 libudev1 libxslt1.1 netplan.io nplan
+  python3-apport python3-problem-report python3.6 python3.6-minimal sudo
+  systemd systemd-sysv tzdata udev
+27 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+Need to get 11.8 MB of archives.
+After this operation, 39.9 kB of additional disk space will be used.
+Get:1 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 base-files amd64 10.1ubuntu2.7 [60.3 kB]
+Get:2 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnss-systemd amd64 237-3ubuntu10.31 [105 kB]
+Get:3 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsystemd0 amd64 237-3ubuntu10.31 [204 kB]
+Get:4 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpam-systemd amd64 237-3ubuntu10.31 [108 kB]
+Get:5 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 systemd amd64 237-3ubuntu10.31 [2904 kB]
+Get:6 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 udev amd64 237-3ubuntu10.31 [1102 kB]
+Get:7 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libudev1 amd64 237-3ubuntu10.31 [53.9 kB]
+Get:8 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 systemd-sysv amd64 237-3ubuntu10.31 [11.7 kB]
+Get:9 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6 amd64 3.6.8-1~18.04.3 [1415 kB]
+Get:10 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6 amd64 3.6.8-1~18.04.3 [202 kB]
+Get:11 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-stdlib amd64 3.6.8-1~18.04.3 [1712 kB]
+Get:12 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6-minimal amd64 3.6.8-1~18.04.3 [1610 kB]
+Get:13 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-minimal amd64 3.6.8-1~18.04.3 [533 kB]
+Get:14 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libidn2-0 amd64 2.0.4-1.1ubuntu0.2 [48.7 kB]
+Get:15 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 distro-info-data all 0.37ubuntu0.6 [4572 B]
+Get:16 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 file amd64 1:5.32-2ubuntu0.3 [22.1 kB]
+Get:17 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmagic1 amd64 1:5.32-2ubuntu0.3 [68.7 kB]
+Get:18 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmagic-mgc amd64 1:5.32-2ubuntu0.3 [184 kB]
+Get:19 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 netplan.io amd64 0.98-0ubuntu1~18.04.1 [64.8 kB]
+Get:20 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 nplan all 0.98-0ubuntu1~18.04.1 [1800 B]
+Get:21 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 sudo amd64 1.8.21p2-3ubuntu1.1 [428 kB]
+Get:22 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 tzdata all 2019c-0ubuntu0.18.04 [190 kB]
+Get:23 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-problem-report all 2.20.9-0ubuntu7.8 [10.5 kB]
+Get:24 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-apport all 2.20.9-0ubuntu7.8 [81.8 kB]
+Get:25 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apport all 2.20.9-0ubuntu7.8 [124 kB]
+Get:26 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libxslt1.1 amd64 1.1.29-5ubuntu0.2 [150 kB]
+Get:27 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 cloud-init all 19.2-36-g059d049c-0ubuntu2~18.04.1 [404 kB]
+Preconfiguring packages ...
+Fetched 11.8 MB in 5s (2212 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56531 files and directories currently installed.)
+Preparing to unpack .../base-files_10.1ubuntu2.7_amd64.deb ...
+Warning: Stopping motd-news.service, but it can still be activated by:
+  motd-news.timer
+Unpacking base-files (10.1ubuntu2.7) over (10.1ubuntu2.6) ...
+Setting up base-files (10.1ubuntu2.7) ...
+Installing new version of config file /etc/update-motd.d/50-motd-news ...
+motd-news.service is a disabled or a static unit, not starting it.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56531 files and directories currently installed.)
+Preparing to unpack .../libnss-systemd_237-3ubuntu10.31_amd64.deb ...
+Unpacking libnss-systemd:amd64 (237-3ubuntu10.31) over (237-3ubuntu10.29) ...
+Preparing to unpack .../libsystemd0_237-3ubuntu10.31_amd64.deb ...
+Unpacking libsystemd0:amd64 (237-3ubuntu10.31) over (237-3ubuntu10.29) ...
+Setting up libsystemd0:amd64 (237-3ubuntu10.31) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56531 files and directories currently installed.)
+Preparing to unpack .../libpam-systemd_237-3ubuntu10.31_amd64.deb ...
+Unpacking libpam-systemd:amd64 (237-3ubuntu10.31) over (237-3ubuntu10.29) ...
+Preparing to unpack .../systemd_237-3ubuntu10.31_amd64.deb ...
+Unpacking systemd (237-3ubuntu10.31) over (237-3ubuntu10.29) ...
+Preparing to unpack .../udev_237-3ubuntu10.31_amd64.deb ...
+Unpacking udev (237-3ubuntu10.31) over (237-3ubuntu10.29) ...
+Preparing to unpack .../libudev1_237-3ubuntu10.31_amd64.deb ...
+Unpacking libudev1:amd64 (237-3ubuntu10.31) over (237-3ubuntu10.29) ...
+Setting up libudev1:amd64 (237-3ubuntu10.31) ...
+Setting up systemd (237-3ubuntu10.31) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56531 files and directories currently installed.)
+Preparing to unpack .../0-systemd-sysv_237-3ubuntu10.31_amd64.deb ...
+Unpacking systemd-sysv (237-3ubuntu10.31) over (237-3ubuntu10.29) ...
+Preparing to unpack .../1-libpython3.6_3.6.8-1~18.04.3_amd64.deb ...
+Unpacking libpython3.6:amd64 (3.6.8-1~18.04.3) over (3.6.8-1~18.04.2) ...
+Preparing to unpack .../2-python3.6_3.6.8-1~18.04.3_amd64.deb ...
+Unpacking python3.6 (3.6.8-1~18.04.3) over (3.6.8-1~18.04.2) ...
+Preparing to unpack .../3-libpython3.6-stdlib_3.6.8-1~18.04.3_amd64.deb ...
+Unpacking libpython3.6-stdlib:amd64 (3.6.8-1~18.04.3) over (3.6.8-1~18.04.2) ...
+Preparing to unpack .../4-python3.6-minimal_3.6.8-1~18.04.3_amd64.deb ...
+Unpacking python3.6-minimal (3.6.8-1~18.04.3) over (3.6.8-1~18.04.2) ...
+Preparing to unpack .../5-libpython3.6-minimal_3.6.8-1~18.04.3_amd64.deb ...
+Unpacking libpython3.6-minimal:amd64 (3.6.8-1~18.04.3) over (3.6.8-1~18.04.2) ...
+Preparing to unpack .../6-libidn2-0_2.0.4-1.1ubuntu0.2_amd64.deb ...
+Unpacking libidn2-0:amd64 (2.0.4-1.1ubuntu0.2) over (2.0.4-1.1build2) ...
+Setting up libidn2-0:amd64 (2.0.4-1.1ubuntu0.2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56531 files and directories currently installed.)
+Preparing to unpack .../00-distro-info-data_0.37ubuntu0.6_all.deb ...
+Unpacking distro-info-data (0.37ubuntu0.6) over (0.37ubuntu0.5) ...
+Preparing to unpack .../01-file_1%3a5.32-2ubuntu0.3_amd64.deb ...
+Unpacking file (1:5.32-2ubuntu0.3) over (1:5.32-2ubuntu0.2) ...
+Preparing to unpack .../02-libmagic1_1%3a5.32-2ubuntu0.3_amd64.deb ...
+Unpacking libmagic1:amd64 (1:5.32-2ubuntu0.3) over (1:5.32-2ubuntu0.2) ...
+Preparing to unpack .../03-libmagic-mgc_1%3a5.32-2ubuntu0.3_amd64.deb ...
+Unpacking libmagic-mgc (1:5.32-2ubuntu0.3) over (1:5.32-2ubuntu0.2) ...
+Preparing to unpack .../04-netplan.io_0.98-0ubuntu1~18.04.1_amd64.deb ...
+Unpacking netplan.io (0.98-0ubuntu1~18.04.1) over (0.97-0ubuntu1~18.04.1) ...
+Preparing to unpack .../05-nplan_0.98-0ubuntu1~18.04.1_all.deb ...
+Unpacking nplan (0.98-0ubuntu1~18.04.1) over (0.97-0ubuntu1~18.04.1) ...
+Preparing to unpack .../06-sudo_1.8.21p2-3ubuntu1.1_amd64.deb ...
+Unpacking sudo (1.8.21p2-3ubuntu1.1) over (1.8.21p2-3ubuntu1) ...
+Preparing to unpack .../07-tzdata_2019c-0ubuntu0.18.04_all.deb ...
+Unpacking tzdata (2019c-0ubuntu0.18.04) over (2019b-0ubuntu0.18.04) ...
+Preparing to unpack .../08-python3-problem-report_2.20.9-0ubuntu7.8_all.deb ...
+Unpacking python3-problem-report (2.20.9-0ubuntu7.8) over (2.20.9-0ubuntu7.7) ...
+Preparing to unpack .../09-python3-apport_2.20.9-0ubuntu7.8_all.deb ...
+Unpacking python3-apport (2.20.9-0ubuntu7.8) over (2.20.9-0ubuntu7.7) ...
+Preparing to unpack .../10-apport_2.20.9-0ubuntu7.8_all.deb ...
+Unpacking apport (2.20.9-0ubuntu7.8) over (2.20.9-0ubuntu7.7) ...
+Preparing to unpack .../11-libxslt1.1_1.1.29-5ubuntu0.2_amd64.deb ...
+Unpacking libxslt1.1:amd64 (1.1.29-5ubuntu0.2) over (1.1.29-5ubuntu0.1) ...
+Preparing to unpack .../12-cloud-init_19.2-36-g059d049c-0ubuntu2~18.04.1_all.deb ...
+Unpacking cloud-init (19.2-36-g059d049c-0ubuntu2~18.04.1) over (19.2-36-g059d049c-0ubuntu1~18.04.1) ...
+Setting up libnss-systemd:amd64 (237-3ubuntu10.31) ...
+Setting up sudo (1.8.21p2-3ubuntu1.1) ...
+Setting up tzdata (2019c-0ubuntu0.18.04) ...
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Thu Oct 31 09:10:44 UTC 2019.
+Universal Time is now:  Thu Oct 31 09:10:44 UTC 2019.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Setting up systemd-sysv (237-3ubuntu10.31) ...
+Setting up distro-info-data (0.37ubuntu0.6) ...
+Setting up netplan.io (0.98-0ubuntu1~18.04.1) ...
+Setting up libmagic-mgc (1:5.32-2ubuntu0.3) ...
+Setting up libmagic1:amd64 (1:5.32-2ubuntu0.3) ...
+Setting up libxslt1.1:amd64 (1.1.29-5ubuntu0.2) ...
+Setting up libpython3.6-minimal:amd64 (3.6.8-1~18.04.3) ...
+Setting up python3-problem-report (2.20.9-0ubuntu7.8) ...
+Setting up udev (237-3ubuntu10.31) ...
+update-initramfs: deferring update (trigger activated)
+Setting up nplan (0.98-0ubuntu1~18.04.1) ...
+Setting up cloud-init (19.2-36-g059d049c-0ubuntu2~18.04.1) ...
+Setting up libpython3.6-stdlib:amd64 (3.6.8-1~18.04.3) ...
+Setting up libpam-systemd:amd64 (237-3ubuntu10.31) ...
+Setting up python3.6-minimal (3.6.8-1~18.04.3) ...
+Setting up file (1:5.32-2ubuntu0.3) ...
+Setting up python3-apport (2.20.9-0ubuntu7.8) ...
+Setting up apport (2.20.9-0ubuntu7.8) ...
+apport-autoreport.service is a disabled or a static unit, not starting it.
+Setting up libpython3.6:amd64 (3.6.8-1~18.04.3) ...
+Setting up python3.6 (3.6.8-1~18.04.3) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Processing triggers for install-info (6.5.0.dfsg.1-2) ...
+Processing triggers for plymouth-theme-ubuntu-text (0.9.3-1ubuntu7.18.04.2) ...
+update-initramfs: deferring update (trigger activated)
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for systemd (237-3ubuntu10.31) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for dbus (1.12.2-1ubuntu1.1) ...
+Processing triggers for rsyslog (8.32.0-1ubuntu4) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for initramfs-tools (0.130ubuntu3.8) ...
+update-initramfs: Generating /boot/initrd.img-4.15.0-1051-aws
++ apt-get -y install apache2 php7.2 php7.2-xml unzip awscli
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils docutils-common libapache2-mod-php7.2
+  libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap libjbig0
+  libjpeg-turbo8 libjpeg8 liblcms2-2 liblua5.2-0 libpaper-utils libpaper1
+  libsodium23 libtiff5 libwebp6 libwebpdemux2 libwebpmux3 php-common
+  php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-readline
+  python3-botocore python3-dateutil python3-docutils python3-jmespath
+  python3-olefile python3-pil python3-pygments python3-roman python3-rsa
+  python3-s3transfer sgml-base ssl-cert xml-core
+Suggested packages:
+  www-browser apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+  php-pear liblcms2-utils docutils-doc fonts-linuxlibertine
+  | ttf-linux-libertine texlive-lang-french texlive-latex-base
+  texlive-latex-recommended python-pil-doc python3-pil-dbg ttf-bitstream-vera
+  sgml-base-doc openssl-blacklist zip debhelper
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils awscli docutils-common
+  libapache2-mod-php7.2 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap libjbig0 libjpeg-turbo8 libjpeg8 liblcms2-2 liblua5.2-0
+  libpaper-utils libpaper1 libsodium23 libtiff5 libwebp6 libwebpdemux2
+  libwebpmux3 php-common php7.2 php7.2-cli php7.2-common php7.2-json
+  php7.2-opcache php7.2-readline php7.2-xml python3-botocore python3-dateutil
+  python3-docutils python3-jmespath python3-olefile python3-pil
+  python3-pygments python3-roman python3-rsa python3-s3transfer sgml-base
+  ssl-cert unzip xml-core
+0 upgraded, 45 newly installed, 0 to remove and 3 not upgraded.
+Need to get 10.6 MB of archives.
+After this operation, 66.3 MB of additional disk space will be used.
+Get:1 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libapr1 amd64 1.6.3-2 [90.9 kB]
+Get:2 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1 amd64 1.6.1-2 [84.4 kB]
+Get:3 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-2 [10.6 kB]
+Get:4 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1-ldap amd64 1.6.1-2 [8764 B]
+Get:5 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 liblua5.2-0 amd64 5.2.4-1.1build1 [108 kB]
+Get:6 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-bin amd64 2.4.29-1ubuntu4.11 [1071 kB]
+Get:7 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-utils amd64 2.4.29-1ubuntu4.11 [83.9 kB]
+Get:8 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-data all 2.4.29-1ubuntu4.11 [160 kB]
+Get:9 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2 amd64 2.4.29-1ubuntu4.11 [95.1 kB]
+Get:10 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2-0ubuntu5.18.04.1 [110 kB]
+Get:11 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 sgml-base all 1.29 [12.3 kB]
+Get:12 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 python3-dateutil all 2.6.1-1 [52.3 kB]
+Get:13 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 xml-core all 0.18 [21.3 kB]
+Get:14 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 docutils-common all 0.14+dfsg-3 [156 kB]
+Get:15 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 python3-roman all 2.0.0-3 [8624 B]
+Get:16 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 python3-docutils all 0.14+dfsg-3 [363 kB]
+Get:17 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/universe amd64 python3-jmespath all 0.9.3-1ubuntu1 [18.7 kB]
+Get:18 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/universe amd64 python3-botocore all 1.8.48+repack-1 [1764 kB]
+Get:19 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/universe amd64 python3-rsa all 3.4.2-1 [29.0 kB]
+Get:20 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/universe amd64 python3-s3transfer all 0.1.13-1 [39.8 kB]
+Get:21 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/universe amd64 awscli all 1.14.44-1ubuntu1 [482 kB]
+Get:22 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 php-common all 1:60ubuntu1 [12.1 kB]
+Get:23 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-common amd64 7.2.24-0ubuntu0.18.04.1 [886 kB]
+Get:24 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-json amd64 7.2.24-0ubuntu0.18.04.1 [18.9 kB]
+Get:25 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-opcache amd64 7.2.24-0ubuntu0.18.04.1 [166 kB]
+Get:26 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-readline amd64 7.2.24-0ubuntu0.18.04.1 [12.2 kB]
+Get:27 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libsodium23 amd64 1.0.16-2 [143 kB]
+Get:28 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-cli amd64 7.2.24-0ubuntu0.18.04.1 [1408 kB]
+Get:29 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libapache2-mod-php7.2 amd64 7.2.24-0ubuntu0.18.04.1 [1351 kB]
+Get:30 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libjpeg8 amd64 8c-2ubuntu8 [2194 B]
+Get:31 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 liblcms2-2 amd64 2.9-1ubuntu0.1 [139 kB]
+Get:32 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libpaper1 amd64 1.1.24+nmu5ubuntu1 [13.6 kB]
+Get:33 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libpaper-utils amd64 1.1.24+nmu5ubuntu1 [8170 B]
+Get:34 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libjbig0 amd64 2.1-3.1build1 [26.7 kB]
+Get:35 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libtiff5 amd64 4.0.9-5ubuntu0.3 [153 kB]
+Get:36 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libwebp6 amd64 0.6.1-2 [185 kB]
+Get:37 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libwebpdemux2 amd64 0.6.1-2 [9472 B]
+Get:38 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 libwebpmux3 amd64 0.6.1-2 [19.6 kB]
+Get:39 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2 all 7.2.24-0ubuntu0.18.04.1 [9244 B]
+Get:40 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-xml amd64 7.2.24-0ubuntu0.18.04.1 [107 kB]
+Get:41 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 python3-olefile all 0.45.1-1 [33.3 kB]
+Get:42 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 python3-pil amd64 5.1.0-1 [328 kB]
+Get:43 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 python3-pygments all 2.2.0+dfsg-1 [574 kB]
+Get:44 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 ssl-cert all 1.0.39 [17.0 kB]
+Get:45 http://eu-north-1b.clouds.archive.ubuntu.com/ubuntu bionic/main amd64 unzip amd64 6.0-21ubuntu1 [167 kB]
+Preconfiguring packages ...
+Fetched 10.6 MB in 8s (1396 kB/s)
+Selecting previously unselected package libapr1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56536 files and directories currently installed.)
+Preparing to unpack .../00-libapr1_1.6.3-2_amd64.deb ...
+Unpacking libapr1:amd64 (1.6.3-2) ...
+Selecting previously unselected package libaprutil1:amd64.
+Preparing to unpack .../01-libaprutil1_1.6.1-2_amd64.deb ...
+Unpacking libaprutil1:amd64 (1.6.1-2) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.1-2_amd64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.1-2) ...
+Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../03-libaprutil1-ldap_1.6.1-2_amd64.deb ...
+Unpacking libaprutil1-ldap:amd64 (1.6.1-2) ...
+Selecting previously unselected package liblua5.2-0:amd64.
+Preparing to unpack .../04-liblua5.2-0_5.2.4-1.1build1_amd64.deb ...
+Unpacking liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+Selecting previously unselected package apache2-bin.
+Preparing to unpack .../05-apache2-bin_2.4.29-1ubuntu4.11_amd64.deb ...
+Unpacking apache2-bin (2.4.29-1ubuntu4.11) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../06-apache2-utils_2.4.29-1ubuntu4.11_amd64.deb ...
+Unpacking apache2-utils (2.4.29-1ubuntu4.11) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../07-apache2-data_2.4.29-1ubuntu4.11_all.deb ...
+Unpacking apache2-data (2.4.29-1ubuntu4.11) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../08-apache2_2.4.29-1ubuntu4.11_amd64.deb ...
+Unpacking apache2 (2.4.29-1ubuntu4.11) ...
+Selecting previously unselected package libjpeg-turbo8:amd64.
+Preparing to unpack .../09-libjpeg-turbo8_1.5.2-0ubuntu5.18.04.1_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (1.5.2-0ubuntu5.18.04.1) ...
+Selecting previously unselected package sgml-base.
+Preparing to unpack .../10-sgml-base_1.29_all.deb ...
+Unpacking sgml-base (1.29) ...
+Selecting previously unselected package python3-dateutil.
+Preparing to unpack .../11-python3-dateutil_2.6.1-1_all.deb ...
+Unpacking python3-dateutil (2.6.1-1) ...
+Selecting previously unselected package xml-core.
+Preparing to unpack .../12-xml-core_0.18_all.deb ...
+Unpacking xml-core (0.18) ...
+Selecting previously unselected package docutils-common.
+Preparing to unpack .../13-docutils-common_0.14+dfsg-3_all.deb ...
+Unpacking docutils-common (0.14+dfsg-3) ...
+Selecting previously unselected package python3-roman.
+Preparing to unpack .../14-python3-roman_2.0.0-3_all.deb ...
+Unpacking python3-roman (2.0.0-3) ...
+Selecting previously unselected package python3-docutils.
+Preparing to unpack .../15-python3-docutils_0.14+dfsg-3_all.deb ...
+Unpacking python3-docutils (0.14+dfsg-3) ...
+Selecting previously unselected package python3-jmespath.
+Preparing to unpack .../16-python3-jmespath_0.9.3-1ubuntu1_all.deb ...
+Unpacking python3-jmespath (0.9.3-1ubuntu1) ...
+Selecting previously unselected package python3-botocore.
+Preparing to unpack .../17-python3-botocore_1.8.48+repack-1_all.deb ...
+Unpacking python3-botocore (1.8.48+repack-1) ...
+Selecting previously unselected package python3-rsa.
+Preparing to unpack .../18-python3-rsa_3.4.2-1_all.deb ...
+Unpacking python3-rsa (3.4.2-1) ...
+Selecting previously unselected package python3-s3transfer.
+Preparing to unpack .../19-python3-s3transfer_0.1.13-1_all.deb ...
+Unpacking python3-s3transfer (0.1.13-1) ...
+Selecting previously unselected package awscli.
+Preparing to unpack .../20-awscli_1.14.44-1ubuntu1_all.deb ...
+Unpacking awscli (1.14.44-1ubuntu1) ...
+Selecting previously unselected package php-common.
+Preparing to unpack .../21-php-common_1%3a60ubuntu1_all.deb ...
+Unpacking php-common (1:60ubuntu1) ...
+Selecting previously unselected package php7.2-common.
+Preparing to unpack .../22-php7.2-common_7.2.24-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking php7.2-common (7.2.24-0ubuntu0.18.04.1) ...
+Selecting previously unselected package php7.2-json.
+Preparing to unpack .../23-php7.2-json_7.2.24-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking php7.2-json (7.2.24-0ubuntu0.18.04.1) ...
+Selecting previously unselected package php7.2-opcache.
+Preparing to unpack .../24-php7.2-opcache_7.2.24-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking php7.2-opcache (7.2.24-0ubuntu0.18.04.1) ...
+Selecting previously unselected package php7.2-readline.
+Preparing to unpack .../25-php7.2-readline_7.2.24-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking php7.2-readline (7.2.24-0ubuntu0.18.04.1) ...
+Selecting previously unselected package libsodium23:amd64.
+Preparing to unpack .../26-libsodium23_1.0.16-2_amd64.deb ...
+Unpacking libsodium23:amd64 (1.0.16-2) ...
+Selecting previously unselected package php7.2-cli.
+Preparing to unpack .../27-php7.2-cli_7.2.24-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking php7.2-cli (7.2.24-0ubuntu0.18.04.1) ...
+Selecting previously unselected package libapache2-mod-php7.2.
+Preparing to unpack .../28-libapache2-mod-php7.2_7.2.24-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking libapache2-mod-php7.2 (7.2.24-0ubuntu0.18.04.1) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../29-libjpeg8_8c-2ubuntu8_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+Selecting previously unselected package liblcms2-2:amd64.
+Preparing to unpack .../30-liblcms2-2_2.9-1ubuntu0.1_amd64.deb ...
+Unpacking liblcms2-2:amd64 (2.9-1ubuntu0.1) ...
+Selecting previously unselected package libpaper1:amd64.
+Preparing to unpack .../31-libpaper1_1.1.24+nmu5ubuntu1_amd64.deb ...
+Unpacking libpaper1:amd64 (1.1.24+nmu5ubuntu1) ...
+Selecting previously unselected package libpaper-utils.
+Preparing to unpack .../32-libpaper-utils_1.1.24+nmu5ubuntu1_amd64.deb ...
+Unpacking libpaper-utils (1.1.24+nmu5ubuntu1) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../33-libjbig0_2.1-3.1build1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.1-3.1build1) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../34-libtiff5_4.0.9-5ubuntu0.3_amd64.deb ...
+Unpacking libtiff5:amd64 (4.0.9-5ubuntu0.3) ...
+Selecting previously unselected package libwebp6:amd64.
+Preparing to unpack .../35-libwebp6_0.6.1-2_amd64.deb ...
+Unpacking libwebp6:amd64 (0.6.1-2) ...
+Selecting previously unselected package libwebpdemux2:amd64.
+Preparing to unpack .../36-libwebpdemux2_0.6.1-2_amd64.deb ...
+Unpacking libwebpdemux2:amd64 (0.6.1-2) ...
+Selecting previously unselected package libwebpmux3:amd64.
+Preparing to unpack .../37-libwebpmux3_0.6.1-2_amd64.deb ...
+Unpacking libwebpmux3:amd64 (0.6.1-2) ...
+Selecting previously unselected package php7.2.
+Preparing to unpack .../38-php7.2_7.2.24-0ubuntu0.18.04.1_all.deb ...
+Unpacking php7.2 (7.2.24-0ubuntu0.18.04.1) ...
+Selecting previously unselected package php7.2-xml.
+Preparing to unpack .../39-php7.2-xml_7.2.24-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking php7.2-xml (7.2.24-0ubuntu0.18.04.1) ...
+Selecting previously unselected package python3-olefile.
+Preparing to unpack .../40-python3-olefile_0.45.1-1_all.deb ...
+Unpacking python3-olefile (0.45.1-1) ...
+Selecting previously unselected package python3-pil:amd64.
+Preparing to unpack .../41-python3-pil_5.1.0-1_amd64.deb ...
+Unpacking python3-pil:amd64 (5.1.0-1) ...
+Selecting previously unselected package python3-pygments.
+Preparing to unpack .../42-python3-pygments_2.2.0+dfsg-1_all.deb ...
+Unpacking python3-pygments (2.2.0+dfsg-1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../43-ssl-cert_1.0.39_all.deb ...
+Unpacking ssl-cert (1.0.39) ...
+Selecting previously unselected package unzip.
+Preparing to unpack .../44-unzip_6.0-21ubuntu1_amd64.deb ...
+Unpacking unzip (6.0-21ubuntu1) ...
+Setting up libpaper1:amd64 (1.1.24+nmu5ubuntu1) ...
+
+Creating config file /etc/papersize with new version
+Setting up libapr1:amd64 (1.6.3-2) ...
+Setting up libpaper-utils (1.1.24+nmu5ubuntu1) ...
+Setting up python3-roman (2.0.0-3) ...
+Setting up python3-olefile (0.45.1-1) ...
+Setting up liblcms2-2:amd64 (2.9-1ubuntu0.1) ...
+Setting up libjbig0:amd64 (2.1-3.1build1) ...
+Setting up unzip (6.0-21ubuntu1) ...
+Setting up apache2-data (2.4.29-1ubuntu4.11) ...
+Setting up ssl-cert (1.0.39) ...
+Setting up libjpeg-turbo8:amd64 (1.5.2-0ubuntu5.18.04.1) ...
+Setting up sgml-base (1.29) ...
+Setting up python3-rsa (3.4.2-1) ...
+Setting up libsodium23:amd64 (1.0.16-2) ...
+Setting up libaprutil1:amd64 (1.6.1-2) ...
+Setting up php-common (1:60ubuntu1) ...
+Created symlink /etc/systemd/system/timers.target.wants/phpsessionclean.timer → /lib/systemd/system/phpsessionclean.timer.
+Setting up python3-jmespath (0.9.3-1ubuntu1) ...
+Setting up liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+Setting up xml-core (0.18) ...
+Setting up python3-dateutil (2.6.1-1) ...
+Setting up libaprutil1-ldap:amd64 (1.6.1-2) ...
+Setting up libwebp6:amd64 (0.6.1-2) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+Setting up python3-pygments (2.2.0+dfsg-1) ...
+Setting up php7.2-common (7.2.24-0ubuntu0.18.04.1) ...
+
+Creating config file /etc/php/7.2/mods-available/calendar.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/ctype.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/exif.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/fileinfo.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/ftp.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/gettext.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/iconv.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/pdo.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/phar.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/posix.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/shmop.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/sockets.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/sysvmsg.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/sysvsem.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/sysvshm.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/tokenizer.ini with new version
+Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.1-2) ...
+Setting up apache2-utils (2.4.29-1ubuntu4.11) ...
+Setting up apache2-bin (2.4.29-1ubuntu4.11) ...
+Setting up libtiff5:amd64 (4.0.9-5ubuntu0.3) ...
+Setting up php7.2-readline (7.2.24-0ubuntu0.18.04.1) ...
+
+Creating config file /etc/php/7.2/mods-available/readline.ini with new version
+Setting up libwebpmux3:amd64 (0.6.1-2) ...
+Setting up libwebpdemux2:amd64 (0.6.1-2) ...
+Setting up php7.2-json (7.2.24-0ubuntu0.18.04.1) ...
+
+Creating config file /etc/php/7.2/mods-available/json.ini with new version
+Setting up php7.2-opcache (7.2.24-0ubuntu0.18.04.1) ...
+
+Creating config file /etc/php/7.2/mods-available/opcache.ini with new version
+Setting up php7.2-xml (7.2.24-0ubuntu0.18.04.1) ...
+
+Creating config file /etc/php/7.2/mods-available/dom.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/simplexml.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/wddx.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/xml.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/xmlreader.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/xmlwriter.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/xsl.ini with new version
+Setting up python3-pil:amd64 (5.1.0-1) ...
+Setting up apache2 (2.4.29-1ubuntu4.11) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+Setting up php7.2-cli (7.2.24-0ubuntu0.18.04.1) ...
+update-alternatives: using /usr/bin/php7.2 to provide /usr/bin/php (php) in auto mode
+update-alternatives: using /usr/bin/phar7.2 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: using /usr/bin/phar.phar7.2 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+
+Creating config file /etc/php/7.2/cli/php.ini with new version
+Setting up libapache2-mod-php7.2 (7.2.24-0ubuntu0.18.04.1) ...
+
+Creating config file /etc/php/7.2/apache2/php.ini with new version
+Module mpm_event disabled.
+Enabling module mpm_prefork.
+apache2_switch_mpm Switch to prefork
+apache2_invoke: Enable module php7.2
+Setting up php7.2 (7.2.24-0ubuntu0.18.04.1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for shared-mime-info (1.9-2) ...
+Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for systemd (237-3ubuntu10.31) ...
+Processing triggers for sgml-base (1.29) ...
+Setting up docutils-common (0.14+dfsg-3) ...
+Processing triggers for sgml-base (1.29) ...
+Setting up python3-docutils (0.14+dfsg-3) ...
+update-alternatives: using /usr/share/docutils/scripts/python3/rst-buildhtml to provide /usr/bin/rst-buildhtml (rst-buildhtml) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2html to provide /usr/bin/rst2html (rst2html) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2html4 to provide /usr/bin/rst2html4 (rst2html4) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2html5 to provide /usr/bin/rst2html5 (rst2html5) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2latex to provide /usr/bin/rst2latex (rst2latex) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2man to provide /usr/bin/rst2man (rst2man) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2odt to provide /usr/bin/rst2odt (rst2odt) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2odt_prepstyles to provide /usr/bin/rst2odt_prepstyles (rst2odt_prepstyles) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2pseudoxml to provide /usr/bin/rst2pseudoxml (rst2pseudoxml) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2s5 to provide /usr/bin/rst2s5 (rst2s5) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2xetex to provide /usr/bin/rst2xetex (rst2xetex) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rst2xml to provide /usr/bin/rst2xml (rst2xml) in auto mode
+update-alternatives: using /usr/share/docutils/scripts/python3/rstpep2html to provide /usr/bin/rstpep2html (rstpep2html) in auto mode
+Setting up python3-botocore (1.8.48+repack-1) ...
+Setting up python3-s3transfer (0.1.13-1) ...
+Setting up awscli (1.14.44-1ubuntu1) ...
++ wget --output-document /tmp/aws.zip https://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip
+--2019-10-31 09:11:32--  https://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip
+Resolving docs.aws.amazon.com (docs.aws.amazon.com)... 54.239.24.117
+Connecting to docs.aws.amazon.com (docs.aws.amazon.com)|54.239.24.117|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2280759 (2.2M) [application/zip]
+Saving to: ‘/tmp/aws.zip’
+
+     0K .......... .......... .......... .......... ..........  2%  124K 18s
+    50K .......... .......... .......... .......... ..........  4%  211K 14s
+   100K .......... .......... .......... .......... ..........  6%  156K 13s
+   150K .......... .......... .......... .......... ..........  8%  234K 12s
+   200K .......... .......... .......... .......... .......... 11%  234K 11s
+   250K .......... .......... .......... .......... .......... 13%  234K 10s
+   300K .......... .......... .......... .......... .......... 15%  234K 10s
+   350K .......... .......... .......... .......... .......... 17%  457K 9s
+   400K .......... .......... .......... .......... .......... 20%  234K 8s
+   450K .......... .......... .......... .......... .......... 22%  468K 8s
+   500K .......... .......... .......... .......... .......... 24%  234K 7s
+   550K .......... .......... .......... .......... .......... 26%  468K 7s
+   600K .......... .......... .......... .......... .......... 29%  467K 6s
+   650K .......... .......... .......... .......... .......... 31%  468K 6s
+   700K .......... .......... .......... .......... .......... 33%  468K 6s
+   750K .......... .......... .......... .......... .......... 35%  468K 5s
+   800K .......... .......... .......... .......... .......... 38%  468K 5s
+   850K .......... .......... .......... .......... .......... 40%  469K 5s
+   900K .......... .......... .......... .......... .......... 42%  469K 4s
+   950K .......... .......... .......... .......... .......... 44% 20.6M 4s
+  1000K .......... .......... .......... .......... .......... 47%  476K 4s
+  1050K .......... .......... .......... .......... .......... 49%  470K 4s
+  1100K .......... .......... .......... .......... .......... 51%  469K 3s
+  1150K .......... .......... .......... .......... .......... 53% 19.7M 3s
+  1200K .......... .......... .......... .......... .......... 56%  469K 3s
+  1250K .......... .......... .......... .......... .......... 58%  477K 3s
+  1300K .......... .......... .......... .......... .......... 60% 20.6M 3s
+  1350K .......... .......... .......... .......... .......... 62%  478K 2s
+  1400K .......... .......... .......... .......... .......... 65%  470K 2s
+  1450K .......... .......... .......... .......... .......... 67% 19.6M 2s
+  1500K .......... .......... .......... .......... .......... 69%  479K 2s
+  1550K .......... .......... .......... .......... .......... 71% 17.2M 2s
+  1600K .......... .......... .......... .......... .......... 74%  480K 1s
+  1650K .......... .......... .......... .......... .......... 76% 19.0M 1s
+  1700K .......... .......... .......... .......... .......... 78%  480K 1s
+  1750K .......... .......... .......... .......... .......... 80% 14.2M 1s
+  1800K .......... .......... .......... .......... .......... 83%  484K 1s
+  1850K .......... .......... .......... .......... .......... 85% 19.5M 1s
+  1900K .......... .......... .......... .......... .......... 87%  480K 1s
+  1950K .......... .......... .......... .......... .......... 89% 21.5M 1s
+  2000K .......... .......... .......... .......... .......... 92%  479K 0s
+  2050K .......... .......... .......... .......... .......... 94% 13.4M 0s
+  2100K .......... .......... .......... .......... .......... 96%  486K 0s
+  2150K .......... .......... .......... .......... .......... 98% 55.0M 0s
+  2200K .......... .......... .......                         100% 8.86M=4.8s
+
+2019-10-31 09:11:38 (463 KB/s) - ‘/tmp/aws.zip’ saved [2280759/2280759]
+
++ mkdir /var/www/aws-php-sdk
++ unzip /tmp/aws.zip -d /var/www/aws-php-sdk/
+Archive:  /tmp/aws.zip
+   creating: /var/www/aws-php-sdk/GuzzleHttp/
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Client.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Middleware.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/functions_include.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/TransferStats.php  
+   creating: /var/www/aws-php-sdk/GuzzleHttp/Cookie/
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Cookie/CookieJarInterface.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Cookie/SessionCookieJar.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Cookie/SetCookie.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Cookie/CookieJar.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Cookie/FileCookieJar.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/ClientInterface.php  
+   creating: /var/www/aws-php-sdk/GuzzleHttp/Exception/
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/TransferException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/GuzzleException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/ServerException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/InvalidArgumentException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/RequestException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/SeekException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/ConnectException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/TooManyRedirectsException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/BadResponseException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Exception/ClientException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/functions.php  
+   creating: /var/www/aws-php-sdk/GuzzleHttp/Handler/
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Handler/CurlMultiHandler.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Handler/StreamHandler.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Handler/CurlFactory.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Handler/Proxy.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Handler/MockHandler.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Handler/CurlHandler.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Handler/CurlFactoryInterface.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Handler/EasyHandle.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/UriTemplate.php  
+   creating: /var/www/aws-php-sdk/GuzzleHttp/Promise/
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/FulfilledPromise.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/functions_include.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/TaskQueueInterface.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/Coroutine.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/CancellationException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/functions.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/Promise.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/RejectedPromise.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/RejectionException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/EachPromise.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/AggregateException.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/TaskQueue.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/PromiseInterface.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Promise/PromisorInterface.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/RequestOptions.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/HandlerStack.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/RedirectMiddleware.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/PrepareBodyMiddleware.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/MessageFormatter.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Pool.php  
+   creating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/CachingStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/UriResolver.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/Stream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/FnStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/NoSeekStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/StreamWrapper.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/Uri.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/functions_include.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/functions.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/LimitStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/Response.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/PumpStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/ServerRequest.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/AppendStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/Request.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/InflateStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/MultipartStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/UploadedFile.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/StreamDecoratorTrait.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/Rfc7230.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/DroppingStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/BufferStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/MessageTrait.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/UriNormalizer.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/Psr7/LazyOpenStream.php  
+  inflating: /var/www/aws-php-sdk/GuzzleHttp/RetryMiddleware.php  
+  inflating: /var/www/aws-php-sdk/README.md  
+  inflating: /var/www/aws-php-sdk/NOTICE.md  
+  inflating: /var/www/aws-php-sdk/LICENSE.md  
+  inflating: /var/www/aws-php-sdk/aws-autoloader.php  
+   creating: /var/www/aws-php-sdk/JmesPath/
+  inflating: /var/www/aws-php-sdk/JmesPath/Utils.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/AstRuntime.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/Env.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/SyntaxErrorException.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/Parser.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/FnDispatcher.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/DebugRuntime.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/TreeCompiler.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/CompilerRuntime.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/Lexer.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/TreeInterpreter.php  
+  inflating: /var/www/aws-php-sdk/JmesPath/JmesPath.php  
+   creating: /var/www/aws-php-sdk/Aws/
+   creating: /var/www/aws-php-sdk/Aws/ResourceGroups/
+  inflating: /var/www/aws-php-sdk/Aws/ResourceGroups/ResourceGroupsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ResourceGroups/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ResourceGroups/Exception/ResourceGroupsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/HasDataTrait.php  
+   creating: /var/www/aws-php-sdk/Aws/Amplify/
+   creating: /var/www/aws-php-sdk/Aws/Amplify/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Amplify/Exception/AmplifyException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Amplify/AmplifyClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaTailor/
+   creating: /var/www/aws-php-sdk/Aws/MediaTailor/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MediaTailor/Exception/MediaTailorException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MediaTailor/MediaTailorClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaStoreData/
+  inflating: /var/www/aws-php-sdk/Aws/MediaStoreData/MediaStoreDataClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaStoreData/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MediaStoreData/Exception/MediaStoreDataException.php  
+   creating: /var/www/aws-php-sdk/Aws/Backup/
+   creating: /var/www/aws-php-sdk/Aws/Backup/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Backup/Exception/BackupException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Backup/BackupClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Kinesis/
+   creating: /var/www/aws-php-sdk/Aws/Kinesis/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Kinesis/Exception/KinesisException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Kinesis/KinesisClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Sms/
+   creating: /var/www/aws-php-sdk/Aws/Sms/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Sms/Exception/SmsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Sms/SmsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudSearchDomain/
+   creating: /var/www/aws-php-sdk/Aws/CloudSearchDomain/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudSearchDomain/Exception/CloudSearchDomainException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudSearchDomain/CloudSearchDomainClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Athena/
+   creating: /var/www/aws-php-sdk/Aws/Athena/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Athena/Exception/AthenaException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Athena/AthenaClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudHsm/
+  inflating: /var/www/aws-php-sdk/Aws/CloudHsm/CloudHsmClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudHsm/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudHsm/Exception/CloudHsmException.php  
+   creating: /var/www/aws-php-sdk/Aws/MTurk/
+   creating: /var/www/aws-php-sdk/Aws/MTurk/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MTurk/Exception/MTurkException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MTurk/MTurkClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MQ/
+   creating: /var/www/aws-php-sdk/Aws/MQ/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MQ/Exception/MQException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MQ/MQClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Sqs/
+  inflating: /var/www/aws-php-sdk/Aws/Sqs/SqsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Sqs/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Sqs/Exception/SqsException.php  
+   creating: /var/www/aws-php-sdk/Aws/EventBridge/
+   creating: /var/www/aws-php-sdk/Aws/EventBridge/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/EventBridge/Exception/EventBridgeException.php  
+  inflating: /var/www/aws-php-sdk/Aws/EventBridge/EventBridgeClient.php  
+   creating: /var/www/aws-php-sdk/Aws/OpsWorksCM/
+   creating: /var/www/aws-php-sdk/Aws/OpsWorksCM/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/OpsWorksCM/Exception/OpsWorksCMException.php  
+  inflating: /var/www/aws-php-sdk/Aws/OpsWorksCM/OpsWorksCMClient.php  
+   creating: /var/www/aws-php-sdk/Aws/WorkMailMessageFlow/
+   creating: /var/www/aws-php-sdk/Aws/WorkMailMessageFlow/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/WorkMailMessageFlow/Exception/WorkMailMessageFlowException.php  
+  inflating: /var/www/aws-php-sdk/Aws/WorkMailMessageFlow/WorkMailMessageFlowClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Support/
+   creating: /var/www/aws-php-sdk/Aws/Support/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Support/Exception/SupportException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Support/SupportClient.php  
+   creating: /var/www/aws-php-sdk/Aws/WorkMail/
+  inflating: /var/www/aws-php-sdk/Aws/WorkMail/WorkMailClient.php  
+   creating: /var/www/aws-php-sdk/Aws/WorkMail/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/WorkMail/Exception/WorkMailException.php  
+   creating: /var/www/aws-php-sdk/Aws/Organizations/
+  inflating: /var/www/aws-php-sdk/Aws/Organizations/OrganizationsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Organizations/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Organizations/Exception/OrganizationsException.php  
+   creating: /var/www/aws-php-sdk/Aws/KinesisVideo/
+   creating: /var/www/aws-php-sdk/Aws/KinesisVideo/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/KinesisVideo/Exception/KinesisVideoException.php  
+  inflating: /var/www/aws-php-sdk/Aws/KinesisVideo/KinesisVideoClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaConnect/
+  inflating: /var/www/aws-php-sdk/Aws/MediaConnect/MediaConnectClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaConnect/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MediaConnect/Exception/MediaConnectException.php  
+   creating: /var/www/aws-php-sdk/Aws/Cloud9/
+   creating: /var/www/aws-php-sdk/Aws/Cloud9/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Cloud9/Exception/Cloud9Exception.php  
+  inflating: /var/www/aws-php-sdk/Aws/Cloud9/Cloud9Client.php  
+  inflating: /var/www/aws-php-sdk/Aws/Middleware.php  
+   creating: /var/www/aws-php-sdk/Aws/OpsWorks/
+  inflating: /var/www/aws-php-sdk/Aws/OpsWorks/OpsWorksClient.php  
+   creating: /var/www/aws-php-sdk/Aws/OpsWorks/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/OpsWorks/Exception/OpsWorksException.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaPackageVod/
+   creating: /var/www/aws-php-sdk/Aws/MediaPackageVod/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MediaPackageVod/Exception/MediaPackageVodException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MediaPackageVod/MediaPackageVodClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/Result.php  
+  inflating: /var/www/aws-php-sdk/Aws/AwsClientInterface.php  
+   creating: /var/www/aws-php-sdk/Aws/Ecs/
+  inflating: /var/www/aws-php-sdk/Aws/Ecs/EcsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Ecs/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Ecs/Exception/EcsException.php  
+   creating: /var/www/aws-php-sdk/Aws/CodeCommit/
+   creating: /var/www/aws-php-sdk/Aws/CodeCommit/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CodeCommit/Exception/CodeCommitException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CodeCommit/CodeCommitClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Personalize/
+   creating: /var/www/aws-php-sdk/Aws/Personalize/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Personalize/Exception/PersonalizeException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Personalize/PersonalizeClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ManagedBlockchain/
+   creating: /var/www/aws-php-sdk/Aws/ManagedBlockchain/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ManagedBlockchain/Exception/ManagedBlockchainException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ManagedBlockchain/ManagedBlockchainClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MarketplaceMetering/
+  inflating: /var/www/aws-php-sdk/Aws/MarketplaceMetering/MarketplaceMeteringClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MarketplaceMetering/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MarketplaceMetering/Exception/MarketplaceMeteringException.php  
+   creating: /var/www/aws-php-sdk/Aws/CostandUsageReportService/
+   creating: /var/www/aws-php-sdk/Aws/CostandUsageReportService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CostandUsageReportService/Exception/CostandUsageReportServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CostandUsageReportService/CostandUsageReportServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CognitoIdentityProvider/
+   creating: /var/www/aws-php-sdk/Aws/CognitoIdentityProvider/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CognitoIdentityProvider/Exception/CognitoIdentityProviderException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CognitoIdentityProvider/CognitoIdentityProviderClient.php  
+   creating: /var/www/aws-php-sdk/Aws/PersonalizeEvents/
+   creating: /var/www/aws-php-sdk/Aws/PersonalizeEvents/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/PersonalizeEvents/Exception/PersonalizeEventsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/PersonalizeEvents/PersonalizeEventsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Iam/
+   creating: /var/www/aws-php-sdk/Aws/Iam/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Iam/Exception/IamException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Iam/IamClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Crypto/
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/KmsMaterialsProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/AesGcmEncryptingStream.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/AesStreamInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/MetadataEnvelope.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/AesGcmDecryptingStream.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/AesEncryptingStream.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/AesDecryptingStream.php  
+   creating: /var/www/aws-php-sdk/Aws/Crypto/Cipher/
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/Cipher/Cbc.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/Cipher/CipherBuilderTrait.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/Cipher/CipherMethod.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/MetadataStrategyInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/EncryptionTrait.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/AbstractCryptoClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/MaterialsProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Crypto/DecryptionTrait.php  
+   creating: /var/www/aws-php-sdk/Aws/WorkDocs/
+  inflating: /var/www/aws-php-sdk/Aws/WorkDocs/WorkDocsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/WorkDocs/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/WorkDocs/Exception/WorkDocsException.php  
+   creating: /var/www/aws-php-sdk/Aws/Glacier/
+  inflating: /var/www/aws-php-sdk/Aws/Glacier/TreeHash.php  
+   creating: /var/www/aws-php-sdk/Aws/Glacier/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Glacier/Exception/GlacierException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Glacier/MultipartUploader.php  
+  inflating: /var/www/aws-php-sdk/Aws/Glacier/GlacierClient.php  
+   creating: /var/www/aws-php-sdk/Aws/IoT1ClickDevicesService/
+   creating: /var/www/aws-php-sdk/Aws/IoT1ClickDevicesService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/IoT1ClickDevicesService/Exception/IoT1ClickDevicesServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/IoT1ClickDevicesService/IoT1ClickDevicesServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ForecastService/
+   creating: /var/www/aws-php-sdk/Aws/ForecastService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ForecastService/Exception/ForecastServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ForecastService/ForecastServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/IoTEventsData/
+   creating: /var/www/aws-php-sdk/Aws/IoTEventsData/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/IoTEventsData/Exception/IoTEventsDataException.php  
+  inflating: /var/www/aws-php-sdk/Aws/IoTEventsData/IoTEventsDataClient.php  
+   creating: /var/www/aws-php-sdk/Aws/KinesisVideoMedia/
+  inflating: /var/www/aws-php-sdk/Aws/KinesisVideoMedia/KinesisVideoMediaClient.php  
+   creating: /var/www/aws-php-sdk/Aws/KinesisVideoMedia/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/KinesisVideoMedia/Exception/KinesisVideoMediaException.php  
+   creating: /var/www/aws-php-sdk/Aws/IotDataPlane/
+   creating: /var/www/aws-php-sdk/Aws/IotDataPlane/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/IotDataPlane/Exception/IotDataPlaneException.php  
+  inflating: /var/www/aws-php-sdk/Aws/IotDataPlane/IotDataPlaneClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/History.php  
+   creating: /var/www/aws-php-sdk/Aws/Pinpoint/
+   creating: /var/www/aws-php-sdk/Aws/Pinpoint/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Pinpoint/Exception/PinpointException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Pinpoint/PinpointClient.php  
+   creating: /var/www/aws-php-sdk/Aws/KinesisAnalytics/
+   creating: /var/www/aws-php-sdk/Aws/KinesisAnalytics/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/KinesisAnalytics/Exception/KinesisAnalyticsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/KinesisAnalytics/KinesisAnalyticsClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/TraceMiddleware.php  
+   creating: /var/www/aws-php-sdk/Aws/Route53/
+   creating: /var/www/aws-php-sdk/Aws/Route53/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Route53/Exception/Route53Exception.php  
+  inflating: /var/www/aws-php-sdk/Aws/Route53/Route53Client.php  
+  inflating: /var/www/aws-php-sdk/Aws/HashInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/IdempotencyTokenMiddleware.php  
+   creating: /var/www/aws-php-sdk/Aws/ElasticTranscoder/
+  inflating: /var/www/aws-php-sdk/Aws/ElasticTranscoder/ElasticTranscoderClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ElasticTranscoder/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ElasticTranscoder/Exception/ElasticTranscoderException.php  
+   creating: /var/www/aws-php-sdk/Aws/CognitoSync/
+   creating: /var/www/aws-php-sdk/Aws/CognitoSync/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CognitoSync/Exception/CognitoSyncException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CognitoSync/CognitoSyncClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ApiGateway/
+   creating: /var/www/aws-php-sdk/Aws/ApiGateway/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ApiGateway/Exception/ApiGatewayException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ApiGateway/ApiGatewayClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ResourceGroupsTaggingAPI/
+   creating: /var/www/aws-php-sdk/Aws/ResourceGroupsTaggingAPI/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ResourceGroupsTaggingAPI/Exception/ResourceGroupsTaggingAPIException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ResourceGroupsTaggingAPI/ResourceGroupsTaggingAPIClient.php  
+   creating: /var/www/aws-php-sdk/Aws/WorkLink/
+   creating: /var/www/aws-php-sdk/Aws/WorkLink/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/WorkLink/Exception/WorkLinkException.php  
+  inflating: /var/www/aws-php-sdk/Aws/WorkLink/WorkLinkClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Sts/
+   creating: /var/www/aws-php-sdk/Aws/Sts/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Sts/Exception/StsException.php  
+   creating: /var/www/aws-php-sdk/Aws/Sts/RegionalEndpoints/
+  inflating: /var/www/aws-php-sdk/Aws/Sts/RegionalEndpoints/Configuration.php  
+   creating: /var/www/aws-php-sdk/Aws/Sts/RegionalEndpoints/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Sts/RegionalEndpoints/Exception/ConfigurationException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Sts/RegionalEndpoints/ConfigurationProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Sts/RegionalEndpoints/ConfigurationInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/Sts/StsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/WorkSpaces/
+   creating: /var/www/aws-php-sdk/Aws/WorkSpaces/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/WorkSpaces/Exception/WorkSpacesException.php  
+  inflating: /var/www/aws-php-sdk/Aws/WorkSpaces/WorkSpacesClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Textract/
+  inflating: /var/www/aws-php-sdk/Aws/Textract/TextractClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Textract/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Textract/Exception/TextractException.php  
+   creating: /var/www/aws-php-sdk/Aws/IoTThingsGraph/
+   creating: /var/www/aws-php-sdk/Aws/IoTThingsGraph/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/IoTThingsGraph/Exception/IoTThingsGraphException.php  
+  inflating: /var/www/aws-php-sdk/Aws/IoTThingsGraph/IoTThingsGraphClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MachineLearning/
+   creating: /var/www/aws-php-sdk/Aws/MachineLearning/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MachineLearning/Exception/MachineLearningException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MachineLearning/MachineLearningClient.php  
+   creating: /var/www/aws-php-sdk/Aws/DirectoryService/
+  inflating: /var/www/aws-php-sdk/Aws/DirectoryService/DirectoryServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/DirectoryService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DirectoryService/Exception/DirectoryServiceException.php  
+   creating: /var/www/aws-php-sdk/Aws/Credentials/
+  inflating: /var/www/aws-php-sdk/Aws/Credentials/InstanceProfileProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Credentials/AssumeRoleCredentialProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Credentials/CredentialProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Credentials/EcsCredentialProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Credentials/Credentials.php  
+  inflating: /var/www/aws-php-sdk/Aws/Credentials/AssumeRoleWithWebIdentityCredentialProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Credentials/CredentialsInterface.php  
+   creating: /var/www/aws-php-sdk/Aws/ForecastQueryService/
+   creating: /var/www/aws-php-sdk/Aws/ForecastQueryService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ForecastQueryService/Exception/ForecastQueryServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ForecastQueryService/ForecastQueryServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/S3/
+  inflating: /var/www/aws-php-sdk/Aws/S3/ObjectUploader.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/Transfer.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/S3ClientTrait.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/StreamWrapper.php  
+   creating: /var/www/aws-php-sdk/Aws/S3/Crypto/
+  inflating: /var/www/aws-php-sdk/Aws/S3/Crypto/HeadersMetadataStrategy.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/Crypto/S3EncryptionClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/Crypto/InstructionFileMetadataStrategy.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/Crypto/CryptoParamsTrait.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/Crypto/S3EncryptionMultipartUploader.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/GetBucketLocationParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/ObjectCopier.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/BatchDelete.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/AmbiguousSuccessParser.php  
+   creating: /var/www/aws-php-sdk/Aws/S3/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/S3/Exception/S3Exception.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/Exception/S3MultipartUploadException.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/Exception/PermanentRedirectException.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/Exception/DeleteMultipleObjectsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/PostObjectV4.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/MultipartUploader.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/PermanentRedirectMiddleware.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/RetryableMalformedResponseParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/S3UriParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/S3ClientInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/S3Client.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/MultipartUploadingTrait.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/SSECMiddleware.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/S3MultiRegionClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/PutObjectUrlMiddleware.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/MultipartCopy.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/PostObject.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/BucketEndpointMiddleware.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/ApplyChecksumMiddleware.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3/S3EndpointMiddleware.php  
+   creating: /var/www/aws-php-sdk/Aws/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Exception/UnresolvedApiException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Exception/EventStreamDataException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Exception/IncalculablePayloadException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Exception/UnresolvedSignatureException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Exception/InvalidJsonException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Exception/MultipartUploadException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Exception/CouldNotCreateChecksumException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Exception/CredentialsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Exception/UnresolvedEndpointException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Exception/AwsException.php  
+   creating: /var/www/aws-php-sdk/Aws/Connect/
+  inflating: /var/www/aws-php-sdk/Aws/Connect/ConnectClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Connect/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Connect/Exception/ConnectException.php  
+   creating: /var/www/aws-php-sdk/Aws/IoTJobsDataPlane/
+  inflating: /var/www/aws-php-sdk/Aws/IoTJobsDataPlane/IoTJobsDataPlaneClient.php  
+   creating: /var/www/aws-php-sdk/Aws/IoTJobsDataPlane/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/IoTJobsDataPlane/Exception/IoTJobsDataPlaneException.php  
+   creating: /var/www/aws-php-sdk/Aws/SnowBall/
+   creating: /var/www/aws-php-sdk/Aws/SnowBall/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/SnowBall/Exception/SnowBallException.php  
+  inflating: /var/www/aws-php-sdk/Aws/SnowBall/SnowBallClient.php  
+   creating: /var/www/aws-php-sdk/Aws/signer/
+   creating: /var/www/aws-php-sdk/Aws/signer/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/signer/Exception/signerException.php  
+  inflating: /var/www/aws-php-sdk/Aws/signer/signerClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/PsrCacheAdapter.php  
+  inflating: /var/www/aws-php-sdk/Aws/functions.php  
+  inflating: /var/www/aws-php-sdk/Aws/CacheInterface.php  
+   creating: /var/www/aws-php-sdk/Aws/PinpointSMSVoice/
+   creating: /var/www/aws-php-sdk/Aws/PinpointSMSVoice/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/PinpointSMSVoice/Exception/PinpointSMSVoiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/PinpointSMSVoice/PinpointSMSVoiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ServiceQuotas/
+  inflating: /var/www/aws-php-sdk/Aws/ServiceQuotas/ServiceQuotasClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ServiceQuotas/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ServiceQuotas/Exception/ServiceQuotasException.php  
+   creating: /var/www/aws-php-sdk/Aws/Greengrass/
+   creating: /var/www/aws-php-sdk/Aws/Greengrass/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Greengrass/Exception/GreengrassException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Greengrass/GreengrassClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/StreamRequestPayloadMiddleware.php  
+   creating: /var/www/aws-php-sdk/Aws/Glue/
+   creating: /var/www/aws-php-sdk/Aws/Glue/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Glue/Exception/GlueException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Glue/GlueClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CostExplorer/
+   creating: /var/www/aws-php-sdk/Aws/CostExplorer/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CostExplorer/Exception/CostExplorerException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CostExplorer/CostExplorerClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Iot/
+  inflating: /var/www/aws-php-sdk/Aws/Iot/IotClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Iot/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Iot/Exception/IotException.php  
+   creating: /var/www/aws-php-sdk/Aws/DatabaseMigrationService/
+   creating: /var/www/aws-php-sdk/Aws/DatabaseMigrationService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DatabaseMigrationService/Exception/DatabaseMigrationServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DatabaseMigrationService/DatabaseMigrationServiceClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/PhpHash.php  
+   creating: /var/www/aws-php-sdk/Aws/Efs/
+  inflating: /var/www/aws-php-sdk/Aws/Efs/EfsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Efs/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Efs/Exception/EfsException.php  
+   creating: /var/www/aws-php-sdk/Aws/Ecr/
+   creating: /var/www/aws-php-sdk/Aws/Ecr/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Ecr/Exception/EcrException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Ecr/EcrClient.php  
+   creating: /var/www/aws-php-sdk/Aws/RDSDataService/
+  inflating: /var/www/aws-php-sdk/Aws/RDSDataService/RDSDataServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/RDSDataService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/RDSDataService/Exception/RDSDataServiceException.php  
+   creating: /var/www/aws-php-sdk/Aws/Handler/
+   creating: /var/www/aws-php-sdk/Aws/Handler/GuzzleV5/
+  inflating: /var/www/aws-php-sdk/Aws/Handler/GuzzleV5/GuzzleHandler.php  
+  inflating: /var/www/aws-php-sdk/Aws/Handler/GuzzleV5/PsrStream.php  
+  inflating: /var/www/aws-php-sdk/Aws/Handler/GuzzleV5/GuzzleStream.php  
+   creating: /var/www/aws-php-sdk/Aws/Handler/GuzzleV6/
+  inflating: /var/www/aws-php-sdk/Aws/Handler/GuzzleV6/GuzzleHandler.php  
+   creating: /var/www/aws-php-sdk/Aws/KinesisVideoArchivedMedia/
+  inflating: /var/www/aws-php-sdk/Aws/KinesisVideoArchivedMedia/KinesisVideoArchivedMediaClient.php  
+   creating: /var/www/aws-php-sdk/Aws/KinesisVideoArchivedMedia/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/KinesisVideoArchivedMedia/Exception/KinesisVideoArchivedMediaException.php  
+  inflating: /var/www/aws-php-sdk/Aws/WrappedHttpHandler.php  
+   creating: /var/www/aws-php-sdk/Aws/Api/
+  inflating: /var/www/aws-php-sdk/Aws/Api/ApiProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/AbstractModel.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/DateTimeResult.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Operation.php  
+   creating: /var/www/aws-php-sdk/Aws/Api/Parser/
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/QueryParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/PayloadParserTrait.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/AbstractParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/EventParsingIterator.php  
+   creating: /var/www/aws-php-sdk/Aws/Api/Parser/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/Exception/ParserException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/Crc32ValidatingParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/JsonRpcParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/AbstractRestParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/DecodingEventStreamIterator.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/RestXmlParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/RestJsonParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/XmlParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/JsonParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Parser/MetadataParserTrait.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/ShapeMap.php  
+   creating: /var/www/aws-php-sdk/Aws/Api/ErrorParser/
+  inflating: /var/www/aws-php-sdk/Aws/Api/ErrorParser/JsonRpcErrorParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/ErrorParser/RestJsonErrorParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/ErrorParser/XmlErrorParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/ErrorParser/JsonParserTrait.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/ErrorParser/AbstractErrorParser.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/MapShape.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Service.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/DocModel.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/ListShape.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Validator.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/StructureShape.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Shape.php  
+   creating: /var/www/aws-php-sdk/Aws/Api/Serializer/
+  inflating: /var/www/aws-php-sdk/Aws/Api/Serializer/QuerySerializer.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Serializer/Ec2ParamBuilder.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Serializer/RestJsonSerializer.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Serializer/JsonBody.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Serializer/XmlBody.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Serializer/RestXmlSerializer.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Serializer/JsonRpcSerializer.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Serializer/QueryParamBuilder.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/Serializer/RestSerializer.php  
+  inflating: /var/www/aws-php-sdk/Aws/Api/TimestampShape.php  
+   creating: /var/www/aws-php-sdk/Aws/SageMaker/
+   creating: /var/www/aws-php-sdk/Aws/SageMaker/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/SageMaker/Exception/SageMakerException.php  
+  inflating: /var/www/aws-php-sdk/Aws/SageMaker/SageMakerClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Multipart/
+  inflating: /var/www/aws-php-sdk/Aws/Multipart/AbstractUploader.php  
+  inflating: /var/www/aws-php-sdk/Aws/Multipart/UploadState.php  
+  inflating: /var/www/aws-php-sdk/Aws/Multipart/AbstractUploadManager.php  
+   creating: /var/www/aws-php-sdk/Aws/Endpoint/
+  inflating: /var/www/aws-php-sdk/Aws/Endpoint/EndpointProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Endpoint/PartitionEndpointProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Endpoint/PartitionInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/Endpoint/PatternEndpointProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Endpoint/Partition.php  
+  inflating: /var/www/aws-php-sdk/Aws/MockHandler.php  
+  inflating: /var/www/aws-php-sdk/Aws/JsonCompiler.php  
+   creating: /var/www/aws-php-sdk/Aws/Batch/
+   creating: /var/www/aws-php-sdk/Aws/Batch/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Batch/Exception/BatchException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Batch/BatchClient.php  
+   creating: /var/www/aws-php-sdk/Aws/DAX/
+   creating: /var/www/aws-php-sdk/Aws/DAX/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DAX/Exception/DAXException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DAX/DAXClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ApplicationInsights/
+   creating: /var/www/aws-php-sdk/Aws/ApplicationInsights/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ApplicationInsights/Exception/ApplicationInsightsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ApplicationInsights/ApplicationInsightsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/IoT1ClickProjects/
+   creating: /var/www/aws-php-sdk/Aws/IoT1ClickProjects/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/IoT1ClickProjects/Exception/IoT1ClickProjectsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/IoT1ClickProjects/IoT1ClickProjectsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Inspector/
+   creating: /var/www/aws-php-sdk/Aws/Inspector/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Inspector/Exception/InspectorException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Inspector/InspectorClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/HandlerList.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudWatch/
+   creating: /var/www/aws-php-sdk/Aws/CloudWatch/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudWatch/Exception/CloudWatchException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudWatch/CloudWatchClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ElasticLoadBalancing/
+   creating: /var/www/aws-php-sdk/Aws/ElasticLoadBalancing/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ElasticLoadBalancing/Exception/ElasticLoadBalancingException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ElasticLoadBalancing/ElasticLoadBalancingClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/Sdk.php  
+   creating: /var/www/aws-php-sdk/Aws/Rds/
+  inflating: /var/www/aws-php-sdk/Aws/Rds/RdsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Rds/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Rds/Exception/RdsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Rds/AuthTokenGenerator.php  
+  inflating: /var/www/aws-php-sdk/Aws/ResultInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/Psr16CacheAdapter.php  
+   creating: /var/www/aws-php-sdk/Aws/SecretsManager/
+  inflating: /var/www/aws-php-sdk/Aws/SecretsManager/SecretsManagerClient.php  
+   creating: /var/www/aws-php-sdk/Aws/SecretsManager/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/SecretsManager/Exception/SecretsManagerException.php  
+   creating: /var/www/aws-php-sdk/Aws/ComprehendMedical/
+   creating: /var/www/aws-php-sdk/Aws/ComprehendMedical/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ComprehendMedical/Exception/ComprehendMedicalException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ComprehendMedical/ComprehendMedicalClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ImportExport/
+   creating: /var/www/aws-php-sdk/Aws/ImportExport/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ImportExport/Exception/ImportExportException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ImportExport/ImportExportClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudWatchLogs/
+  inflating: /var/www/aws-php-sdk/Aws/CloudWatchLogs/CloudWatchLogsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudWatchLogs/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudWatchLogs/Exception/CloudWatchLogsException.php  
+   creating: /var/www/aws-php-sdk/Aws/Ses/
+  inflating: /var/www/aws-php-sdk/Aws/Ses/SesClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Ses/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Ses/Exception/SesException.php  
+   creating: /var/www/aws-php-sdk/Aws/DirectConnect/
+   creating: /var/www/aws-php-sdk/Aws/DirectConnect/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DirectConnect/Exception/DirectConnectException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DirectConnect/DirectConnectClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudDirectory/
+   creating: /var/www/aws-php-sdk/Aws/CloudDirectory/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudDirectory/Exception/CloudDirectoryException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudDirectory/CloudDirectoryClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Redshift/
+  inflating: /var/www/aws-php-sdk/Aws/Redshift/RedshiftClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Redshift/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Redshift/Exception/RedshiftException.php  
+   creating: /var/www/aws-php-sdk/Aws/LakeFormation/
+   creating: /var/www/aws-php-sdk/Aws/LakeFormation/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/LakeFormation/Exception/LakeFormationException.php  
+  inflating: /var/www/aws-php-sdk/Aws/LakeFormation/LakeFormationClient.php  
+   creating: /var/www/aws-php-sdk/Aws/EKS/
+   creating: /var/www/aws-php-sdk/Aws/EKS/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/EKS/Exception/EKSException.php  
+  inflating: /var/www/aws-php-sdk/Aws/EKS/EKSClient.php  
+   creating: /var/www/aws-php-sdk/Aws/AutoScaling/
+  inflating: /var/www/aws-php-sdk/Aws/AutoScaling/AutoScalingClient.php  
+   creating: /var/www/aws-php-sdk/Aws/AutoScaling/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/AutoScaling/Exception/AutoScalingException.php  
+   creating: /var/www/aws-php-sdk/Aws/QuickSight/
+  inflating: /var/www/aws-php-sdk/Aws/QuickSight/QuickSightClient.php  
+   creating: /var/www/aws-php-sdk/Aws/QuickSight/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/QuickSight/Exception/QuickSightException.php  
+   creating: /var/www/aws-php-sdk/Aws/CognitoIdentity/
+   creating: /var/www/aws-php-sdk/Aws/CognitoIdentity/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CognitoIdentity/Exception/CognitoIdentityException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CognitoIdentity/CognitoIdentityClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/CognitoIdentity/CognitoIdentityProvider.php  
+   creating: /var/www/aws-php-sdk/Aws/Signature/
+  inflating: /var/www/aws-php-sdk/Aws/Signature/SignatureTrait.php  
+  inflating: /var/www/aws-php-sdk/Aws/Signature/AnonymousSignature.php  
+  inflating: /var/www/aws-php-sdk/Aws/Signature/SignatureProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/Signature/SignatureInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/Signature/SignatureV4.php  
+  inflating: /var/www/aws-php-sdk/Aws/Signature/S3SignatureV4.php  
+   creating: /var/www/aws-php-sdk/Aws/TranscribeService/
+   creating: /var/www/aws-php-sdk/Aws/TranscribeService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/TranscribeService/Exception/TranscribeServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/TranscribeService/TranscribeServiceClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/LruArrayCache.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaPackage/
+   creating: /var/www/aws-php-sdk/Aws/MediaPackage/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MediaPackage/Exception/MediaPackageException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MediaPackage/MediaPackageClient.php  
+   creating: /var/www/aws-php-sdk/Aws/PersonalizeRuntime/
+  inflating: /var/www/aws-php-sdk/Aws/PersonalizeRuntime/PersonalizeRuntimeClient.php  
+   creating: /var/www/aws-php-sdk/Aws/PersonalizeRuntime/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/PersonalizeRuntime/Exception/PersonalizeRuntimeException.php  
+   creating: /var/www/aws-php-sdk/Aws/RAM/
+  inflating: /var/www/aws-php-sdk/Aws/RAM/RAMClient.php  
+   creating: /var/www/aws-php-sdk/Aws/RAM/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/RAM/Exception/RAMException.php  
+   creating: /var/www/aws-php-sdk/Aws/data/
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-08-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-08-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-08-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-08-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-11-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-11-25/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-11-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-11-25/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-11-25/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-07/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-07/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-07/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-07/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-07/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2019-03-26/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2019-03-26/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2019-03-26/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2019-03-26/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2019-03-26/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2019-03-26/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-03-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-03-25/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-03-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-03-25/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-03-25/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-06-18/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-06-18/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-06-18/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-06-18/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-06-18/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-06-18/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-10-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-10-30/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-10-30/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-10-30/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-10-30/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2017-10-30/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-01-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-01-28/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-01-28/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-01-28/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-29/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-29/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-29/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-29/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-09-29/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2015-07-27/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2015-07-27/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2015-07-27/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2015-07-27/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-11-05/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-11-05/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-11-05/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-11-05/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-11-05/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2018-11-05/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-08-20/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-08-20/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-08-20/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudfront/2016-08-20/waiters-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/endpoints.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/runtime.lex/
+   creating: /var/www/aws-php-sdk/Aws/data/runtime.lex/2016-11-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/runtime.lex/2016-11-28/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/runtime.lex/2016-11-28/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/groundstation/
+   creating: /var/www/aws-php-sdk/Aws/data/groundstation/2019-05-23/
+  inflating: /var/www/aws-php-sdk/Aws/data/groundstation/2019-05-23/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/groundstation/2019-05-23/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/kinesisvideo/
+   creating: /var/www/aws-php-sdk/Aws/data/kinesisvideo/2017-09-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesisvideo/2017-09-30/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesisvideo/2017-09-30/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/worklink/
+   creating: /var/www/aws-php-sdk/Aws/data/worklink/2018-09-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/worklink/2018-09-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/worklink/2018-09-25/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/neptune/
+   creating: /var/www/aws-php-sdk/Aws/data/neptune/2014-10-31/
+  inflating: /var/www/aws-php-sdk/Aws/data/neptune/2014-10-31/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/neptune/2014-10-31/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/neptune/2014-10-31/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/neptune/2014-10-31/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/devicefarm/
+   creating: /var/www/aws-php-sdk/Aws/data/devicefarm/2015-06-23/
+  inflating: /var/www/aws-php-sdk/Aws/data/devicefarm/2015-06-23/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/devicefarm/2015-06-23/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/devicefarm/2015-06-23/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/apigatewayv2/
+   creating: /var/www/aws-php-sdk/Aws/data/apigatewayv2/2018-11-29/
+  inflating: /var/www/aws-php-sdk/Aws/data/apigatewayv2/2018-11-29/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/apigatewayv2/2018-11-29/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/batch/
+   creating: /var/www/aws-php-sdk/Aws/data/batch/2016-08-10/
+  inflating: /var/www/aws-php-sdk/Aws/data/batch/2016-08-10/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/batch/2016-08-10/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/batch/2016-08-10/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/medialive/
+   creating: /var/www/aws-php-sdk/Aws/data/medialive/2017-10-14/
+  inflating: /var/www/aws-php-sdk/Aws/data/medialive/2017-10-14/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/medialive/2017-10-14/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/medialive/2017-10-14/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/robomaker/
+   creating: /var/www/aws-php-sdk/Aws/data/robomaker/2018-06-29/
+  inflating: /var/www/aws-php-sdk/Aws/data/robomaker/2018-06-29/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/robomaker/2018-06-29/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/pinpoint-email/
+   creating: /var/www/aws-php-sdk/Aws/data/pinpoint-email/2018-07-26/
+  inflating: /var/www/aws-php-sdk/Aws/data/pinpoint-email/2018-07-26/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/pinpoint-email/2018-07-26/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/gamelift/
+   creating: /var/www/aws-php-sdk/Aws/data/gamelift/2015-10-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/gamelift/2015-10-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/gamelift/2015-10-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/gamelift/2015-10-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/data.iot/
+   creating: /var/www/aws-php-sdk/Aws/data/data.iot/2015-05-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/data.iot/2015-05-28/api-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/metering.marketplace/
+   creating: /var/www/aws-php-sdk/Aws/data/metering.marketplace/2016-01-14/
+  inflating: /var/www/aws-php-sdk/Aws/data/metering.marketplace/2016-01-14/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/metering.marketplace/2016-01-14/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mediaconnect/
+   creating: /var/www/aws-php-sdk/Aws/data/mediaconnect/2018-11-14/
+  inflating: /var/www/aws-php-sdk/Aws/data/mediaconnect/2018-11-14/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mediaconnect/2018-11-14/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/glacier/
+   creating: /var/www/aws-php-sdk/Aws/data/glacier/2012-06-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/glacier/2012-06-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/glacier/2012-06-01/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/glacier/2012-06-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/glacier/2012-06-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/glacier/2012-06-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mobile/
+   creating: /var/www/aws-php-sdk/Aws/data/mobile/2017-07-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/mobile/2017-07-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mobile/2017-07-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/quicksight/
+   creating: /var/www/aws-php-sdk/Aws/data/quicksight/2018-04-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/quicksight/2018-04-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/quicksight/2018-04-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/secretsmanager/
+   creating: /var/www/aws-php-sdk/Aws/data/secretsmanager/2017-10-17/
+  inflating: /var/www/aws-php-sdk/Aws/data/secretsmanager/2017-10-17/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/secretsmanager/2017-10-17/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/secretsmanager/2017-10-17/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/backup/
+   creating: /var/www/aws-php-sdk/Aws/data/backup/2018-11-15/
+  inflating: /var/www/aws-php-sdk/Aws/data/backup/2018-11-15/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/backup/2018-11-15/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancingv2/
+   creating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancingv2/2015-12-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancingv2/2015-12-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancingv2/2015-12-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancingv2/2015-12-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancingv2/2015-12-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudhsm/
+   creating: /var/www/aws-php-sdk/Aws/data/cloudhsm/2014-05-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudhsm/2014-05-30/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudhsm/2014-05-30/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/aliases.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/s3/
+   creating: /var/www/aws-php-sdk/Aws/data/s3/2006-03-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/s3/2006-03-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/s3/2006-03-01/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/s3/2006-03-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/s3/2006-03-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/s3/2006-03-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/iot1click-devices/
+   creating: /var/www/aws-php-sdk/Aws/data/iot1click-devices/2018-05-14/
+  inflating: /var/www/aws-php-sdk/Aws/data/iot1click-devices/2018-05-14/api-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/transcribe/
+   creating: /var/www/aws-php-sdk/Aws/data/transcribe/2017-10-26/
+  inflating: /var/www/aws-php-sdk/Aws/data/transcribe/2017-10-26/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/transcribe/2017-10-26/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/guardduty/
+   creating: /var/www/aws-php-sdk/Aws/data/guardduty/2017-11-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/guardduty/2017-11-28/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/guardduty/2017-11-28/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/pricing/
+   creating: /var/www/aws-php-sdk/Aws/data/pricing/2017-10-15/
+  inflating: /var/www/aws-php-sdk/Aws/data/pricing/2017-10-15/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/pricing/2017-10-15/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/personalize/
+   creating: /var/www/aws-php-sdk/Aws/data/personalize/2018-05-22/
+  inflating: /var/www/aws-php-sdk/Aws/data/personalize/2018-05-22/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/personalize/2018-05-22/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/textract/
+   creating: /var/www/aws-php-sdk/Aws/data/textract/2018-06-27/
+  inflating: /var/www/aws-php-sdk/Aws/data/textract/2018-06-27/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/textract/2018-06-27/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/sqs/
+   creating: /var/www/aws-php-sdk/Aws/data/sqs/2012-11-05/
+  inflating: /var/www/aws-php-sdk/Aws/data/sqs/2012-11-05/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sqs/2012-11-05/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sqs/2012-11-05/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sqs/2012-11-05/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/codepipeline/
+   creating: /var/www/aws-php-sdk/Aws/data/codepipeline/2015-07-09/
+  inflating: /var/www/aws-php-sdk/Aws/data/codepipeline/2015-07-09/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codepipeline/2015-07-09/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codepipeline/2015-07-09/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/serverlessrepo/
+   creating: /var/www/aws-php-sdk/Aws/data/serverlessrepo/2017-09-08/
+  inflating: /var/www/aws-php-sdk/Aws/data/serverlessrepo/2017-09-08/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/serverlessrepo/2017-09-08/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/connect/
+   creating: /var/www/aws-php-sdk/Aws/data/connect/2017-08-08/
+  inflating: /var/www/aws-php-sdk/Aws/data/connect/2017-08-08/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/connect/2017-08-08/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cognito-idp/
+   creating: /var/www/aws-php-sdk/Aws/data/cognito-idp/2016-04-18/
+  inflating: /var/www/aws-php-sdk/Aws/data/cognito-idp/2016-04-18/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cognito-idp/2016-04-18/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cognito-idp/2016-04-18/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/qldb-session/
+   creating: /var/www/aws-php-sdk/Aws/data/qldb-session/2019-07-11/
+  inflating: /var/www/aws-php-sdk/Aws/data/qldb-session/2019-07-11/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/qldb-session/2019-07-11/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/clouddirectory/
+   creating: /var/www/aws-php-sdk/Aws/data/clouddirectory/2017-01-11/
+  inflating: /var/www/aws-php-sdk/Aws/data/clouddirectory/2017-01-11/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/clouddirectory/2017-01-11/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/clouddirectory/2016-05-10/
+  inflating: /var/www/aws-php-sdk/Aws/data/clouddirectory/2016-05-10/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/clouddirectory/2016-05-10/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/monitoring/
+   creating: /var/www/aws-php-sdk/Aws/data/monitoring/2010-08-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/monitoring/2010-08-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/monitoring/2010-08-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/monitoring/2010-08-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/monitoring/2010-08-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cognito-identity/
+   creating: /var/www/aws-php-sdk/Aws/data/cognito-identity/2014-06-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/cognito-identity/2014-06-30/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cognito-identity/2014-06-30/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/manifest.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/iotanalytics/
+   creating: /var/www/aws-php-sdk/Aws/data/iotanalytics/2017-11-27/
+  inflating: /var/www/aws-php-sdk/Aws/data/iotanalytics/2017-11-27/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iotanalytics/2017-11-27/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudsearchdomain/
+   creating: /var/www/aws-php-sdk/Aws/data/cloudsearchdomain/2013-01-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudsearchdomain/2013-01-01/api-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/iotevents/
+   creating: /var/www/aws-php-sdk/Aws/data/iotevents/2018-07-27/
+  inflating: /var/www/aws-php-sdk/Aws/data/iotevents/2018-07-27/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iotevents/2018-07-27/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/autoscaling/
+   creating: /var/www/aws-php-sdk/Aws/data/autoscaling/2011-01-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/autoscaling/2011-01-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/autoscaling/2011-01-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/autoscaling/2011-01-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/autoscaling/2011-01-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/codestar/
+   creating: /var/www/aws-php-sdk/Aws/data/codestar/2017-04-19/
+  inflating: /var/www/aws-php-sdk/Aws/data/codestar/2017-04-19/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codestar/2017-04-19/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codestar/2017-04-19/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/codecommit/
+   creating: /var/www/aws-php-sdk/Aws/data/codecommit/2015-04-13/
+  inflating: /var/www/aws-php-sdk/Aws/data/codecommit/2015-04-13/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codecommit/2015-04-13/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codecommit/2015-04-13/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/workmailmessageflow/
+   creating: /var/www/aws-php-sdk/Aws/data/workmailmessageflow/2019-05-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/workmailmessageflow/2019-05-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/workmailmessageflow/2019-05-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/workmail/
+   creating: /var/www/aws-php-sdk/Aws/data/workmail/2017-10-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/workmail/2017-10-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/workmail/2017-10-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/signer/
+   creating: /var/www/aws-php-sdk/Aws/data/signer/2017-08-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/signer/2017-08-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/signer/2017-08-25/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/signer/2017-08-25/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/kinesis-video-media/
+   creating: /var/www/aws-php-sdk/Aws/data/kinesis-video-media/2017-09-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesis-video-media/2017-09-30/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesis-video-media/2017-09-30/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/endpoints_prefix_history.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/alexaforbusiness/
+   creating: /var/www/aws-php-sdk/Aws/data/alexaforbusiness/2017-11-09/
+  inflating: /var/www/aws-php-sdk/Aws/data/alexaforbusiness/2017-11-09/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/alexaforbusiness/2017-11-09/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/fms/
+   creating: /var/www/aws-php-sdk/Aws/data/fms/2018-01-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/fms/2018-01-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/fms/2018-01-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/sms/
+   creating: /var/www/aws-php-sdk/Aws/data/sms/2016-10-24/
+  inflating: /var/www/aws-php-sdk/Aws/data/sms/2016-10-24/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sms/2016-10-24/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sms/2016-10-24/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/waf-regional/
+   creating: /var/www/aws-php-sdk/Aws/data/waf-regional/2016-11-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/waf-regional/2016-11-28/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/waf-regional/2016-11-28/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/waf-regional/2016-11-28/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/redshift/
+   creating: /var/www/aws-php-sdk/Aws/data/redshift/2012-12-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/redshift/2012-12-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/redshift/2012-12-01/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/redshift/2012-12-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/redshift/2012-12-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/redshift/2012-12-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/runtime.sagemaker/
+   creating: /var/www/aws-php-sdk/Aws/data/runtime.sagemaker/2017-05-13/
+  inflating: /var/www/aws-php-sdk/Aws/data/runtime.sagemaker/2017-05-13/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/runtime.sagemaker/2017-05-13/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/logs/
+   creating: /var/www/aws-php-sdk/Aws/data/logs/2014-03-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/logs/2014-03-28/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/logs/2014-03-28/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/logs/2014-03-28/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/streams.dynamodb/
+   creating: /var/www/aws-php-sdk/Aws/data/streams.dynamodb/2012-08-10/
+  inflating: /var/www/aws-php-sdk/Aws/data/streams.dynamodb/2012-08-10/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/streams.dynamodb/2012-08-10/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/sts/
+   creating: /var/www/aws-php-sdk/Aws/data/sts/2011-06-15/
+  inflating: /var/www/aws-php-sdk/Aws/data/sts/2011-06-15/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sts/2011-06-15/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sts/2011-06-15/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/iotevents-data/
+   creating: /var/www/aws-php-sdk/Aws/data/iotevents-data/2018-10-23/
+  inflating: /var/www/aws-php-sdk/Aws/data/iotevents-data/2018-10-23/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iotevents-data/2018-10-23/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/iam/
+   creating: /var/www/aws-php-sdk/Aws/data/iam/2010-05-08/
+  inflating: /var/www/aws-php-sdk/Aws/data/iam/2010-05-08/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iam/2010-05-08/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iam/2010-05-08/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iam/2010-05-08/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/lightsail/
+   creating: /var/www/aws-php-sdk/Aws/data/lightsail/2016-11-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/lightsail/2016-11-28/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/lightsail/2016-11-28/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/lightsail/2016-11-28/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/translate/
+   creating: /var/www/aws-php-sdk/Aws/data/translate/2017-07-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/translate/2017-07-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/translate/2017-07-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/codebuild/
+   creating: /var/www/aws-php-sdk/Aws/data/codebuild/2016-10-06/
+  inflating: /var/www/aws-php-sdk/Aws/data/codebuild/2016-10-06/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codebuild/2016-10-06/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codebuild/2016-10-06/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mediatailor/
+   creating: /var/www/aws-php-sdk/Aws/data/mediatailor/2018-04-23/
+  inflating: /var/www/aws-php-sdk/Aws/data/mediatailor/2018-04-23/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mediatailor/2018-04-23/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/kinesis/
+   creating: /var/www/aws-php-sdk/Aws/data/kinesis/2013-12-02/
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesis/2013-12-02/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesis/2013-12-02/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesis/2013-12-02/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesis/2013-12-02/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/comprehendmedical/
+   creating: /var/www/aws-php-sdk/Aws/data/comprehendmedical/2018-10-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/comprehendmedical/2018-10-30/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/comprehendmedical/2018-10-30/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/datasync/
+   creating: /var/www/aws-php-sdk/Aws/data/datasync/2018-11-09/
+  inflating: /var/www/aws-php-sdk/Aws/data/datasync/2018-11-09/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/datasync/2018-11-09/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mediapackage/
+   creating: /var/www/aws-php-sdk/Aws/data/mediapackage/2017-10-12/
+  inflating: /var/www/aws-php-sdk/Aws/data/mediapackage/2017-10-12/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mediapackage/2017-10-12/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/globalaccelerator/
+   creating: /var/www/aws-php-sdk/Aws/data/globalaccelerator/2018-08-08/
+  inflating: /var/www/aws-php-sdk/Aws/data/globalaccelerator/2018-08-08/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/globalaccelerator/2018-08-08/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/dms/
+   creating: /var/www/aws-php-sdk/Aws/data/dms/2016-01-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/dms/2016-01-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dms/2016-01-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dms/2016-01-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dms/2016-01-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/rds/
+   creating: /var/www/aws-php-sdk/Aws/data/rds/2014-10-31/
+  inflating: /var/www/aws-php-sdk/Aws/data/rds/2014-10-31/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/rds/2014-10-31/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/rds/2014-10-31/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/rds/2014-10-31/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/rds/2014-10-31/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/rds/2014-09-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/rds/2014-09-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/rds/2014-09-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/rds/2014-09-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/datapipeline/
+   creating: /var/www/aws-php-sdk/Aws/data/datapipeline/2012-10-29/
+  inflating: /var/www/aws-php-sdk/Aws/data/datapipeline/2012-10-29/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/datapipeline/2012-10-29/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cur/
+   creating: /var/www/aws-php-sdk/Aws/data/cur/2017-01-06/
+  inflating: /var/www/aws-php-sdk/Aws/data/cur/2017-01-06/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cur/2017-01-06/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cur/2017-01-06/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/shield/
+   creating: /var/www/aws-php-sdk/Aws/data/shield/2016-06-02/
+  inflating: /var/www/aws-php-sdk/Aws/data/shield/2016-06-02/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/shield/2016-06-02/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/shield/2016-06-02/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloud9/
+   creating: /var/www/aws-php-sdk/Aws/data/cloud9/2017-09-23/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloud9/2017-09-23/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloud9/2017-09-23/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ram/
+   creating: /var/www/aws-php-sdk/Aws/data/ram/2018-01-04/
+  inflating: /var/www/aws-php-sdk/Aws/data/ram/2018-01-04/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ram/2018-01-04/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mq/
+   creating: /var/www/aws-php-sdk/Aws/data/mq/2017-11-27/
+  inflating: /var/www/aws-php-sdk/Aws/data/mq/2017-11-27/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mq/2017-11-27/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/glue/
+   creating: /var/www/aws-php-sdk/Aws/data/glue/2017-03-31/
+  inflating: /var/www/aws-php-sdk/Aws/data/glue/2017-03-31/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/glue/2017-03-31/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/glue/2017-03-31/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/eventbridge/
+   creating: /var/www/aws-php-sdk/Aws/data/eventbridge/2015-10-07/
+  inflating: /var/www/aws-php-sdk/Aws/data/eventbridge/2015-10-07/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/eventbridge/2015-10-07/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/eventbridge/2015-10-07/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/elasticmapreduce/
+   creating: /var/www/aws-php-sdk/Aws/data/elasticmapreduce/2009-03-31/
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticmapreduce/2009-03-31/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticmapreduce/2009-03-31/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticmapreduce/2009-03-31/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticmapreduce/2009-03-31/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/pinpoint/
+   creating: /var/www/aws-php-sdk/Aws/data/pinpoint/2016-12-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/pinpoint/2016-12-01/api-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/servicecatalog/
+   creating: /var/www/aws-php-sdk/Aws/data/servicecatalog/2015-12-10/
+  inflating: /var/www/aws-php-sdk/Aws/data/servicecatalog/2015-12-10/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/servicecatalog/2015-12-10/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/servicecatalog/2015-12-10/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/apigateway/
+   creating: /var/www/aws-php-sdk/Aws/data/apigateway/2015-07-09/
+  inflating: /var/www/aws-php-sdk/Aws/data/apigateway/2015-07-09/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/apigateway/2015-07-09/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/apigateway/2015-07-09/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/swf/
+   creating: /var/www/aws-php-sdk/Aws/data/swf/2012-01-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/swf/2012-01-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/swf/2012-01-25/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mediastore/
+   creating: /var/www/aws-php-sdk/Aws/data/mediastore/2017-09-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/mediastore/2017-09-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mediastore/2017-09-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/polly/
+   creating: /var/www/aws-php-sdk/Aws/data/polly/2016-06-10/
+  inflating: /var/www/aws-php-sdk/Aws/data/polly/2016-06-10/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/polly/2016-06-10/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/polly/2016-06-10/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/transfer/
+   creating: /var/www/aws-php-sdk/Aws/data/transfer/2018-11-05/
+  inflating: /var/www/aws-php-sdk/Aws/data/transfer/2018-11-05/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/transfer/2018-11-05/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/iot-jobs-data/
+   creating: /var/www/aws-php-sdk/Aws/data/iot-jobs-data/2017-09-29/
+  inflating: /var/www/aws-php-sdk/Aws/data/iot-jobs-data/2017-09-29/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iot-jobs-data/2017-09-29/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ecs/
+   creating: /var/www/aws-php-sdk/Aws/data/ecs/2014-11-13/
+  inflating: /var/www/aws-php-sdk/Aws/data/ecs/2014-11-13/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ecs/2014-11-13/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ecs/2014-11-13/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ecs/2014-11-13/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/dlm/
+   creating: /var/www/aws-php-sdk/Aws/data/dlm/2018-01-12/
+  inflating: /var/www/aws-php-sdk/Aws/data/dlm/2018-01-12/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dlm/2018-01-12/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/lambda/
+   creating: /var/www/aws-php-sdk/Aws/data/lambda/2015-03-31/
+  inflating: /var/www/aws-php-sdk/Aws/data/lambda/2015-03-31/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/lambda/2015-03-31/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/lambda/2015-03-31/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/lambda/2015-03-31/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudformation/
+   creating: /var/www/aws-php-sdk/Aws/data/cloudformation/2010-05-15/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudformation/2010-05-15/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudformation/2010-05-15/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudformation/2010-05-15/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mediastore-data/
+   creating: /var/www/aws-php-sdk/Aws/data/mediastore-data/2017-09-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/mediastore-data/2017-09-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mediastore-data/2017-09-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/rds-data/
+   creating: /var/www/aws-php-sdk/Aws/data/rds-data/2018-08-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/rds-data/2018-08-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/rds-data/2018-08-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/elastictranscoder/
+   creating: /var/www/aws-php-sdk/Aws/data/elastictranscoder/2012-09-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/elastictranscoder/2012-09-25/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elastictranscoder/2012-09-25/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elastictranscoder/2012-09-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elastictranscoder/2012-09-25/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elastictranscoder/2012-09-25/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancing/
+   creating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancing/2012-06-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancing/2012-06-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancing/2012-06-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancing/2012-06-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticloadbalancing/2012-06-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ecr/
+   creating: /var/www/aws-php-sdk/Aws/data/ecr/2015-09-21/
+  inflating: /var/www/aws-php-sdk/Aws/data/ecr/2015-09-21/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ecr/2015-09-21/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ecr/2015-09-21/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudsearch/
+   creating: /var/www/aws-php-sdk/Aws/data/cloudsearch/2013-01-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudsearch/2013-01-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudsearch/2013-01-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/machinelearning/
+   creating: /var/www/aws-php-sdk/Aws/data/machinelearning/2014-12-12/
+  inflating: /var/www/aws-php-sdk/Aws/data/machinelearning/2014-12-12/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/machinelearning/2014-12-12/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/machinelearning/2014-12-12/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ec2-instance-connect/
+   creating: /var/www/aws-php-sdk/Aws/data/ec2-instance-connect/2018-04-02/
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2-instance-connect/2018-04-02/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2-instance-connect/2018-04-02/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/iot/
+   creating: /var/www/aws-php-sdk/Aws/data/iot/2015-05-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/iot/2015-05-28/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iot/2015-05-28/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iot/2015-05-28/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/macie/
+   creating: /var/www/aws-php-sdk/Aws/data/macie/2017-12-19/
+  inflating: /var/www/aws-php-sdk/Aws/data/macie/2017-12-19/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/macie/2017-12-19/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/xray/
+   creating: /var/www/aws-php-sdk/Aws/data/xray/2016-04-12/
+  inflating: /var/www/aws-php-sdk/Aws/data/xray/2016-04-12/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/xray/2016-04-12/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/kinesisanalytics/
+   creating: /var/www/aws-php-sdk/Aws/data/kinesisanalytics/2015-08-14/
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesisanalytics/2015-08-14/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesisanalytics/2015-08-14/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/snowball/
+   creating: /var/www/aws-php-sdk/Aws/data/snowball/2016-06-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/snowball/2016-06-30/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/snowball/2016-06-30/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/snowball/2016-06-30/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/events/
+   creating: /var/www/aws-php-sdk/Aws/data/events/2015-10-07/
+  inflating: /var/www/aws-php-sdk/Aws/data/events/2015-10-07/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/events/2015-10-07/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/events/2015-10-07/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/lex-models/
+   creating: /var/www/aws-php-sdk/Aws/data/lex-models/2017-04-19/
+  inflating: /var/www/aws-php-sdk/Aws/data/lex-models/2017-04-19/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/lex-models/2017-04-19/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/sagemaker/
+   creating: /var/www/aws-php-sdk/Aws/data/sagemaker/2017-07-24/
+  inflating: /var/www/aws-php-sdk/Aws/data/sagemaker/2017-07-24/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sagemaker/2017-07-24/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sagemaker/2017-07-24/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/autoscaling-plans/
+   creating: /var/www/aws-php-sdk/Aws/data/autoscaling-plans/2018-01-06/
+  inflating: /var/www/aws-php-sdk/Aws/data/autoscaling-plans/2018-01-06/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/autoscaling-plans/2018-01-06/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/config/
+   creating: /var/www/aws-php-sdk/Aws/data/config/2014-11-12/
+  inflating: /var/www/aws-php-sdk/Aws/data/config/2014-11-12/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/config/2014-11-12/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/config/2014-11-12/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/greengrass/
+   creating: /var/www/aws-php-sdk/Aws/data/greengrass/2017-06-07/
+  inflating: /var/www/aws-php-sdk/Aws/data/greengrass/2017-06-07/api-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/entitlement.marketplace/
+   creating: /var/www/aws-php-sdk/Aws/data/entitlement.marketplace/2017-01-11/
+  inflating: /var/www/aws-php-sdk/Aws/data/entitlement.marketplace/2017-01-11/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/entitlement.marketplace/2017-01-11/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mediaconvert/
+   creating: /var/www/aws-php-sdk/Aws/data/mediaconvert/2017-08-29/
+  inflating: /var/www/aws-php-sdk/Aws/data/mediaconvert/2017-08-29/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mediaconvert/2017-08-29/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/apigatewaymanagementapi/
+   creating: /var/www/aws-php-sdk/Aws/data/apigatewaymanagementapi/2018-11-29/
+  inflating: /var/www/aws-php-sdk/Aws/data/apigatewaymanagementapi/2018-11-29/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/apigatewaymanagementapi/2018-11-29/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/personalize-runtime/
+   creating: /var/www/aws-php-sdk/Aws/data/personalize-runtime/2018-05-22/
+  inflating: /var/www/aws-php-sdk/Aws/data/personalize-runtime/2018-05-22/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/personalize-runtime/2018-05-22/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/eks/
+   creating: /var/www/aws-php-sdk/Aws/data/eks/2017-11-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/eks/2017-11-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/eks/2017-11-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/eks/2017-11-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/appmesh/
+   creating: /var/www/aws-php-sdk/Aws/data/appmesh/2019-01-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/appmesh/2019-01-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/appmesh/2019-01-25/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/appmesh/2018-10-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/appmesh/2018-10-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/appmesh/2018-10-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/securityhub/
+   creating: /var/www/aws-php-sdk/Aws/data/securityhub/2018-10-26/
+  inflating: /var/www/aws-php-sdk/Aws/data/securityhub/2018-10-26/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/securityhub/2018-10-26/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/acm-pca/
+   creating: /var/www/aws-php-sdk/Aws/data/acm-pca/2017-08-22/
+  inflating: /var/www/aws-php-sdk/Aws/data/acm-pca/2017-08-22/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/acm-pca/2017-08-22/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/acm-pca/2017-08-22/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/support/
+   creating: /var/www/aws-php-sdk/Aws/data/support/2013-04-15/
+  inflating: /var/www/aws-php-sdk/Aws/data/support/2013-04-15/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/support/2013-04-15/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/license-manager/
+   creating: /var/www/aws-php-sdk/Aws/data/license-manager/2018-08-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/license-manager/2018-08-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/license-manager/2018-08-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudhsmv2/
+   creating: /var/www/aws-php-sdk/Aws/data/cloudhsmv2/2017-04-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudhsmv2/2017-04-28/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudhsmv2/2017-04-28/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudhsmv2/2017-04-28/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/forecast/
+   creating: /var/www/aws-php-sdk/Aws/data/forecast/2018-06-26/
+  inflating: /var/www/aws-php-sdk/Aws/data/forecast/2018-06-26/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/forecast/2018-06-26/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/opsworkscm/
+   creating: /var/www/aws-php-sdk/Aws/data/opsworkscm/2016-11-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/opsworkscm/2016-11-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/opsworkscm/2016-11-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/opsworkscm/2016-11-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/acm/
+   creating: /var/www/aws-php-sdk/Aws/data/acm/2015-12-08/
+  inflating: /var/www/aws-php-sdk/Aws/data/acm/2015-12-08/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/acm/2015-12-08/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/acm/2015-12-08/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/acm/2015-12-08/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/appstream/
+   creating: /var/www/aws-php-sdk/Aws/data/appstream/2016-12-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/appstream/2016-12-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/appstream/2016-12-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/appstream/2016-12-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/appstream/2016-12-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ce/
+   creating: /var/www/aws-php-sdk/Aws/data/ce/2017-10-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/ce/2017-10-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ce/2017-10-25/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ssm/
+   creating: /var/www/aws-php-sdk/Aws/data/ssm/2014-11-06/
+  inflating: /var/www/aws-php-sdk/Aws/data/ssm/2014-11-06/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ssm/2014-11-06/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ssm/2014-11-06/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/route53domains/
+   creating: /var/www/aws-php-sdk/Aws/data/route53domains/2014-05-15/
+  inflating: /var/www/aws-php-sdk/Aws/data/route53domains/2014-05-15/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/route53domains/2014-05-15/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/rekognition/
+   creating: /var/www/aws-php-sdk/Aws/data/rekognition/2016-06-27/
+  inflating: /var/www/aws-php-sdk/Aws/data/rekognition/2016-06-27/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/rekognition/2016-06-27/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/rekognition/2016-06-27/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cloudtrail/
+   creating: /var/www/aws-php-sdk/Aws/data/cloudtrail/2013-11-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudtrail/2013-11-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudtrail/2013-11-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/cloudtrail/2013-11-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/application-autoscaling/
+   creating: /var/www/aws-php-sdk/Aws/data/application-autoscaling/2016-02-06/
+  inflating: /var/www/aws-php-sdk/Aws/data/application-autoscaling/2016-02-06/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/application-autoscaling/2016-02-06/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/application-autoscaling/2016-02-06/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/fsx/
+   creating: /var/www/aws-php-sdk/Aws/data/fsx/2018-03-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/fsx/2018-03-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/fsx/2018-03-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/qldb/
+   creating: /var/www/aws-php-sdk/Aws/data/qldb/2019-01-02/
+  inflating: /var/www/aws-php-sdk/Aws/data/qldb/2019-01-02/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/qldb/2019-01-02/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/kafka/
+   creating: /var/www/aws-php-sdk/Aws/data/kafka/2018-11-14/
+  inflating: /var/www/aws-php-sdk/Aws/data/kafka/2018-11-14/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kafka/2018-11-14/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/kinesis-video-archived-media/
+   creating: /var/www/aws-php-sdk/Aws/data/kinesis-video-archived-media/2017-09-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesis-video-archived-media/2017-09-30/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesis-video-archived-media/2017-09-30/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/sms-voice/
+   creating: /var/www/aws-php-sdk/Aws/data/sms-voice/2018-09-05/
+  inflating: /var/www/aws-php-sdk/Aws/data/sms-voice/2018-09-05/api-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/importexport/
+   creating: /var/www/aws-php-sdk/Aws/data/importexport/2010-06-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/importexport/2010-06-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/importexport/2010-06-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/directconnect/
+   creating: /var/www/aws-php-sdk/Aws/data/directconnect/2012-10-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/directconnect/2012-10-25/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/directconnect/2012-10-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/directconnect/2012-10-25/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mgh/
+   creating: /var/www/aws-php-sdk/Aws/data/mgh/2017-05-31/
+  inflating: /var/www/aws-php-sdk/Aws/data/mgh/2017-05-31/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mgh/2017-05-31/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/resourcegroupstaggingapi/
+   creating: /var/www/aws-php-sdk/Aws/data/resourcegroupstaggingapi/2017-01-26/
+  inflating: /var/www/aws-php-sdk/Aws/data/resourcegroupstaggingapi/2017-01-26/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/resourcegroupstaggingapi/2017-01-26/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mturk-requester/
+   creating: /var/www/aws-php-sdk/Aws/data/mturk-requester/2017-01-17/
+  inflating: /var/www/aws-php-sdk/Aws/data/mturk-requester/2017-01-17/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mturk-requester/2017-01-17/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mturk-requester/2017-01-17/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ec2/
+   creating: /var/www/aws-php-sdk/Aws/data/ec2/2016-09-15/
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-09-15/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-09-15/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-09-15/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-09-15/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ec2/2015-10-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2015-10-01/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2015-10-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2015-10-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2015-10-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ec2/2016-04-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-04-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-04-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-04-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ec2/2016-11-15/
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-11-15/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-11-15/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-11-15/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-11-15/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ec2/2016-11-15/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/kinesisanalyticsv2/
+   creating: /var/www/aws-php-sdk/Aws/data/kinesisanalyticsv2/2018-05-23/
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesisanalyticsv2/2018-05-23/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kinesisanalyticsv2/2018-05-23/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/pi/
+   creating: /var/www/aws-php-sdk/Aws/data/pi/2018-02-27/
+  inflating: /var/www/aws-php-sdk/Aws/data/pi/2018-02-27/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/pi/2018-02-27/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/managedblockchain/
+   creating: /var/www/aws-php-sdk/Aws/data/managedblockchain/2018-09-24/
+  inflating: /var/www/aws-php-sdk/Aws/data/managedblockchain/2018-09-24/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/managedblockchain/2018-09-24/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/budgets/
+   creating: /var/www/aws-php-sdk/Aws/data/budgets/2016-10-20/
+  inflating: /var/www/aws-php-sdk/Aws/data/budgets/2016-10-20/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/budgets/2016-10-20/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/health/
+   creating: /var/www/aws-php-sdk/Aws/data/health/2016-08-04/
+  inflating: /var/www/aws-php-sdk/Aws/data/health/2016-08-04/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/health/2016-08-04/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/firehose/
+   creating: /var/www/aws-php-sdk/Aws/data/firehose/2015-08-04/
+  inflating: /var/www/aws-php-sdk/Aws/data/firehose/2015-08-04/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/firehose/2015-08-04/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/firehose/2015-08-04/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/s3control/
+   creating: /var/www/aws-php-sdk/Aws/data/s3control/2018-08-20/
+  inflating: /var/www/aws-php-sdk/Aws/data/s3control/2018-08-20/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/s3control/2018-08-20/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/elasticache/
+   creating: /var/www/aws-php-sdk/Aws/data/elasticache/2015-02-02/
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticache/2015-02-02/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticache/2015-02-02/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticache/2015-02-02/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticache/2015-02-02/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/service-quotas/
+   creating: /var/www/aws-php-sdk/Aws/data/service-quotas/2019-06-24/
+  inflating: /var/www/aws-php-sdk/Aws/data/service-quotas/2019-06-24/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/service-quotas/2019-06-24/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/servicediscovery/
+   creating: /var/www/aws-php-sdk/Aws/data/servicediscovery/2017-03-14/
+  inflating: /var/www/aws-php-sdk/Aws/data/servicediscovery/2017-03-14/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/servicediscovery/2017-03-14/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/workspaces/
+   creating: /var/www/aws-php-sdk/Aws/data/workspaces/2015-04-08/
+  inflating: /var/www/aws-php-sdk/Aws/data/workspaces/2015-04-08/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/workspaces/2015-04-08/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/workspaces/2015-04-08/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/application-insights/
+   creating: /var/www/aws-php-sdk/Aws/data/application-insights/2018-11-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/application-insights/2018-11-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/application-insights/2018-11-25/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/appsync/
+   creating: /var/www/aws-php-sdk/Aws/data/appsync/2017-07-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/appsync/2017-07-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/appsync/2017-07-25/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/athena/
+   creating: /var/www/aws-php-sdk/Aws/data/athena/2017-05-18/
+  inflating: /var/www/aws-php-sdk/Aws/data/athena/2017-05-18/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/athena/2017-05-18/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/athena/2017-05-18/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/docdb/
+   creating: /var/www/aws-php-sdk/Aws/data/docdb/2014-10-31/
+  inflating: /var/www/aws-php-sdk/Aws/data/docdb/2014-10-31/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/docdb/2014-10-31/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/docdb/2014-10-31/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/docdb/2014-10-31/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/forecastquery/
+   creating: /var/www/aws-php-sdk/Aws/data/forecastquery/2018-06-26/
+  inflating: /var/www/aws-php-sdk/Aws/data/forecastquery/2018-06-26/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/forecastquery/2018-06-26/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/es/
+   creating: /var/www/aws-php-sdk/Aws/data/es/2015-01-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/es/2015-01-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/es/2015-01-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/es/2015-01-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/cognito-sync/
+   creating: /var/www/aws-php-sdk/Aws/data/cognito-sync/2014-06-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/cognito-sync/2014-06-30/api-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/route53resolver/
+   creating: /var/www/aws-php-sdk/Aws/data/route53resolver/2018-04-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/route53resolver/2018-04-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/route53resolver/2018-04-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/route53resolver/2018-04-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/workdocs/
+   creating: /var/www/aws-php-sdk/Aws/data/workdocs/2016-05-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/workdocs/2016-05-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/workdocs/2016-05-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/comprehend/
+   creating: /var/www/aws-php-sdk/Aws/data/comprehend/2017-11-27/
+  inflating: /var/www/aws-php-sdk/Aws/data/comprehend/2017-11-27/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/comprehend/2017-11-27/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/inspector/
+   creating: /var/www/aws-php-sdk/Aws/data/inspector/2016-02-16/
+  inflating: /var/www/aws-php-sdk/Aws/data/inspector/2016-02-16/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/inspector/2016-02-16/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/inspector/2016-02-16/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/dynamodb/
+   creating: /var/www/aws-php-sdk/Aws/data/dynamodb/2011-12-05/
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2011-12-05/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2011-12-05/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2011-12-05/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2011-12-05/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2011-12-05/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/dynamodb/2012-08-10/
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2012-08-10/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2012-08-10/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2012-08-10/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2012-08-10/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dynamodb/2012-08-10/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/route53/
+   creating: /var/www/aws-php-sdk/Aws/data/route53/2013-04-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/route53/2013-04-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/route53/2013-04-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/route53/2013-04-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/route53/2013-04-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/storagegateway/
+   creating: /var/www/aws-php-sdk/Aws/data/storagegateway/2013-06-30/
+  inflating: /var/www/aws-php-sdk/Aws/data/storagegateway/2013-06-30/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/storagegateway/2013-06-30/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/kms/
+   creating: /var/www/aws-php-sdk/Aws/data/kms/2014-11-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/kms/2014-11-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kms/2014-11-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/kms/2014-11-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/dax/
+   creating: /var/www/aws-php-sdk/Aws/data/dax/2017-04-19/
+  inflating: /var/www/aws-php-sdk/Aws/data/dax/2017-04-19/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/dax/2017-04-19/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/organizations/
+   creating: /var/www/aws-php-sdk/Aws/data/organizations/2016-11-28/
+  inflating: /var/www/aws-php-sdk/Aws/data/organizations/2016-11-28/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/organizations/2016-11-28/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/iot1click-projects/
+   creating: /var/www/aws-php-sdk/Aws/data/iot1click-projects/2018-05-14/
+  inflating: /var/www/aws-php-sdk/Aws/data/iot1click-projects/2018-05-14/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iot1click-projects/2018-05-14/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/personalize-events/
+   creating: /var/www/aws-php-sdk/Aws/data/personalize-events/2018-03-22/
+  inflating: /var/www/aws-php-sdk/Aws/data/personalize-events/2018-03-22/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/personalize-events/2018-03-22/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/email/
+   creating: /var/www/aws-php-sdk/Aws/data/email/2010-12-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/email/2010-12-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/email/2010-12-01/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/email/2010-12-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/email/2010-12-01/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/email/2010-12-01/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/elasticfilesystem/
+   creating: /var/www/aws-php-sdk/Aws/data/elasticfilesystem/2015-02-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticfilesystem/2015-02-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticfilesystem/2015-02-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticfilesystem/2015-02-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/states/
+   creating: /var/www/aws-php-sdk/Aws/data/states/2016-11-23/
+  inflating: /var/www/aws-php-sdk/Aws/data/states/2016-11-23/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/states/2016-11-23/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/states/2016-11-23/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/waf/
+   creating: /var/www/aws-php-sdk/Aws/data/waf/2015-08-24/
+  inflating: /var/www/aws-php-sdk/Aws/data/waf/2015-08-24/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/waf/2015-08-24/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/waf/2015-08-24/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/ds/
+   creating: /var/www/aws-php-sdk/Aws/data/ds/2015-04-16/
+  inflating: /var/www/aws-php-sdk/Aws/data/ds/2015-04-16/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ds/2015-04-16/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/ds/2015-04-16/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/marketplacecommerceanalytics/
+   creating: /var/www/aws-php-sdk/Aws/data/marketplacecommerceanalytics/2015-07-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/marketplacecommerceanalytics/2015-07-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/marketplacecommerceanalytics/2015-07-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/marketplacecommerceanalytics/2015-07-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/iotthingsgraph/
+   creating: /var/www/aws-php-sdk/Aws/data/iotthingsgraph/2018-09-06/
+  inflating: /var/www/aws-php-sdk/Aws/data/iotthingsgraph/2018-09-06/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/iotthingsgraph/2018-09-06/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/elasticbeanstalk/
+   creating: /var/www/aws-php-sdk/Aws/data/elasticbeanstalk/2010-12-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticbeanstalk/2010-12-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticbeanstalk/2010-12-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/elasticbeanstalk/2010-12-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/mediapackage-vod/
+   creating: /var/www/aws-php-sdk/Aws/data/mediapackage-vod/2018-11-07/
+  inflating: /var/www/aws-php-sdk/Aws/data/mediapackage-vod/2018-11-07/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/mediapackage-vod/2018-11-07/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/lakeformation/
+   creating: /var/www/aws-php-sdk/Aws/data/lakeformation/2017-03-31/
+  inflating: /var/www/aws-php-sdk/Aws/data/lakeformation/2017-03-31/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/lakeformation/2017-03-31/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/opsworks/
+   creating: /var/www/aws-php-sdk/Aws/data/opsworks/2013-02-18/
+  inflating: /var/www/aws-php-sdk/Aws/data/opsworks/2013-02-18/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/opsworks/2013-02-18/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/opsworks/2013-02-18/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/opsworks/2013-02-18/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/amplify/
+   creating: /var/www/aws-php-sdk/Aws/data/amplify/2017-07-25/
+  inflating: /var/www/aws-php-sdk/Aws/data/amplify/2017-07-25/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/amplify/2017-07-25/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/discovery/
+   creating: /var/www/aws-php-sdk/Aws/data/discovery/2015-11-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/discovery/2015-11-01/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/discovery/2015-11-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/discovery/2015-11-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/codedeploy/
+   creating: /var/www/aws-php-sdk/Aws/data/codedeploy/2014-10-06/
+  inflating: /var/www/aws-php-sdk/Aws/data/codedeploy/2014-10-06/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codedeploy/2014-10-06/waiters-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codedeploy/2014-10-06/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codedeploy/2014-10-06/paginators-1.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/codedeploy/2014-10-06/waiters-2.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/sns/
+   creating: /var/www/aws-php-sdk/Aws/data/sns/2010-03-31/
+  inflating: /var/www/aws-php-sdk/Aws/data/sns/2010-03-31/smoke.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sns/2010-03-31/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/sns/2010-03-31/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/chime/
+   creating: /var/www/aws-php-sdk/Aws/data/chime/2018-05-01/
+  inflating: /var/www/aws-php-sdk/Aws/data/chime/2018-05-01/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/chime/2018-05-01/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/data/resource-groups/
+   creating: /var/www/aws-php-sdk/Aws/data/resource-groups/2017-11-27/
+  inflating: /var/www/aws-php-sdk/Aws/data/resource-groups/2017-11-27/api-2.json.php  
+  inflating: /var/www/aws-php-sdk/Aws/data/resource-groups/2017-11-27/paginators-1.json.php  
+   creating: /var/www/aws-php-sdk/Aws/ApiGatewayV2/
+   creating: /var/www/aws-php-sdk/Aws/ApiGatewayV2/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ApiGatewayV2/Exception/ApiGatewayV2Exception.php  
+  inflating: /var/www/aws-php-sdk/Aws/ApiGatewayV2/ApiGatewayV2Client.php  
+  inflating: /var/www/aws-php-sdk/Aws/HasMonitoringEventsTrait.php  
+   creating: /var/www/aws-php-sdk/Aws/EC2InstanceConnect/
+   creating: /var/www/aws-php-sdk/Aws/EC2InstanceConnect/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/EC2InstanceConnect/Exception/EC2InstanceConnectException.php  
+  inflating: /var/www/aws-php-sdk/Aws/EC2InstanceConnect/EC2InstanceConnectClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Firehose/
+   creating: /var/www/aws-php-sdk/Aws/Firehose/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Firehose/Exception/FirehoseException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Firehose/FirehoseClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/CommandPool.php  
+   creating: /var/www/aws-php-sdk/Aws/MigrationHub/
+   creating: /var/www/aws-php-sdk/Aws/MigrationHub/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MigrationHub/Exception/MigrationHubException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MigrationHub/MigrationHubClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ElasticBeanstalk/
+   creating: /var/www/aws-php-sdk/Aws/ElasticBeanstalk/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ElasticBeanstalk/Exception/ElasticBeanstalkException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ElasticBeanstalk/ElasticBeanstalkClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CodeBuild/
+   creating: /var/www/aws-php-sdk/Aws/CodeBuild/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CodeBuild/Exception/CodeBuildException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CodeBuild/CodeBuildClient.php  
+   creating: /var/www/aws-php-sdk/Aws/QLDB/
+  inflating: /var/www/aws-php-sdk/Aws/QLDB/QLDBClient.php  
+   creating: /var/www/aws-php-sdk/Aws/QLDB/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/QLDB/Exception/QLDBException.php  
+   creating: /var/www/aws-php-sdk/Aws/Kms/
+   creating: /var/www/aws-php-sdk/Aws/Kms/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Kms/Exception/KmsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Kms/KmsClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/ResultPaginator.php  
+   creating: /var/www/aws-php-sdk/Aws/GuardDuty/
+   creating: /var/www/aws-php-sdk/Aws/GuardDuty/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/GuardDuty/Exception/GuardDutyException.php  
+  inflating: /var/www/aws-php-sdk/Aws/GuardDuty/GuardDutyClient.php  
+   creating: /var/www/aws-php-sdk/Aws/GroundStation/
+   creating: /var/www/aws-php-sdk/Aws/GroundStation/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/GroundStation/Exception/GroundStationException.php  
+  inflating: /var/www/aws-php-sdk/Aws/GroundStation/GroundStationClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/PresignUrlMiddleware.php  
+   creating: /var/www/aws-php-sdk/Aws/Sfn/
+  inflating: /var/www/aws-php-sdk/Aws/Sfn/SfnClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Sfn/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Sfn/Exception/SfnException.php  
+   creating: /var/www/aws-php-sdk/Aws/StorageGateway/
+   creating: /var/www/aws-php-sdk/Aws/StorageGateway/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/StorageGateway/Exception/StorageGatewayException.php  
+  inflating: /var/www/aws-php-sdk/Aws/StorageGateway/StorageGatewayClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MarketplaceEntitlementService/
+   creating: /var/www/aws-php-sdk/Aws/MarketplaceEntitlementService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MarketplaceEntitlementService/Exception/MarketplaceEntitlementServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MarketplaceEntitlementService/MarketplaceEntitlementServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudFront/
+  inflating: /var/www/aws-php-sdk/Aws/CloudFront/CookieSigner.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudFront/CloudFrontClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudFront/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudFront/Exception/CloudFrontException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudFront/Signer.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudFront/UrlSigner.php  
+   creating: /var/www/aws-php-sdk/Aws/IoTAnalytics/
+   creating: /var/www/aws-php-sdk/Aws/IoTAnalytics/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/IoTAnalytics/Exception/IoTAnalyticsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/IoTAnalytics/IoTAnalyticsClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/MonitoringEventsInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/AwsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ApiGatewayManagementApi/
+  inflating: /var/www/aws-php-sdk/Aws/ApiGatewayManagementApi/ApiGatewayManagementApiClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ApiGatewayManagementApi/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ApiGatewayManagementApi/Exception/ApiGatewayManagementApiException.php  
+   creating: /var/www/aws-php-sdk/Aws/DynamoDbStreams/
+   creating: /var/www/aws-php-sdk/Aws/DynamoDbStreams/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDbStreams/Exception/DynamoDbStreamsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDbStreams/DynamoDbStreamsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/DocDB/
+   creating: /var/www/aws-php-sdk/Aws/DocDB/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DocDB/Exception/DocDBException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DocDB/DocDBClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Lambda/
+   creating: /var/www/aws-php-sdk/Aws/Lambda/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Lambda/Exception/LambdaException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Lambda/LambdaClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ApplicationDiscoveryService/
+   creating: /var/www/aws-php-sdk/Aws/ApplicationDiscoveryService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ApplicationDiscoveryService/Exception/ApplicationDiscoveryServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ApplicationDiscoveryService/ApplicationDiscoveryServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Ec2/
+  inflating: /var/www/aws-php-sdk/Aws/Ec2/Ec2Client.php  
+   creating: /var/www/aws-php-sdk/Aws/Ec2/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Ec2/Exception/Ec2Exception.php  
+   creating: /var/www/aws-php-sdk/Aws/ElastiCache/
+   creating: /var/www/aws-php-sdk/Aws/ElastiCache/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ElastiCache/Exception/ElastiCacheException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ElastiCache/ElastiCacheClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ACMPCA/
+   creating: /var/www/aws-php-sdk/Aws/ACMPCA/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ACMPCA/Exception/ACMPCAException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ACMPCA/ACMPCAClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Transfer/
+   creating: /var/www/aws-php-sdk/Aws/Transfer/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Transfer/Exception/TransferException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Transfer/TransferClient.php  
+   creating: /var/www/aws-php-sdk/Aws/QLDBSession/
+   creating: /var/www/aws-php-sdk/Aws/QLDBSession/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/QLDBSession/Exception/QLDBSessionException.php  
+  inflating: /var/www/aws-php-sdk/Aws/QLDBSession/QLDBSessionClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaLive/
+  inflating: /var/www/aws-php-sdk/Aws/MediaLive/MediaLiveClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaLive/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MediaLive/Exception/MediaLiveException.php  
+   creating: /var/www/aws-php-sdk/Aws/FSx/
+   creating: /var/www/aws-php-sdk/Aws/FSx/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/FSx/Exception/FSxException.php  
+  inflating: /var/www/aws-php-sdk/Aws/FSx/FSxClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Ssm/
+   creating: /var/www/aws-php-sdk/Aws/Ssm/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Ssm/Exception/SsmException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Ssm/SsmClient.php  
+   creating: /var/www/aws-php-sdk/Aws/IoTEvents/
+  inflating: /var/www/aws-php-sdk/Aws/IoTEvents/IoTEventsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/IoTEvents/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/IoTEvents/Exception/IoTEventsException.php  
+   creating: /var/www/aws-php-sdk/Aws/GlobalAccelerator/
+  inflating: /var/www/aws-php-sdk/Aws/GlobalAccelerator/GlobalAcceleratorClient.php  
+   creating: /var/www/aws-php-sdk/Aws/GlobalAccelerator/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/GlobalAccelerator/Exception/GlobalAcceleratorException.php  
+   creating: /var/www/aws-php-sdk/Aws/Route53Resolver/
+   creating: /var/www/aws-php-sdk/Aws/Route53Resolver/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Route53Resolver/Exception/Route53ResolverException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Route53Resolver/Route53ResolverClient.php  
+   creating: /var/www/aws-php-sdk/Aws/AlexaForBusiness/
+  inflating: /var/www/aws-php-sdk/Aws/AlexaForBusiness/AlexaForBusinessClient.php  
+   creating: /var/www/aws-php-sdk/Aws/AlexaForBusiness/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/AlexaForBusiness/Exception/AlexaForBusinessException.php  
+   creating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/
+  inflating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/Configuration.php  
+   creating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/Exception/ConfigurationException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/ConfigurationProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/AbstractMonitoringMiddleware.php  
+  inflating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/MonitoringMiddlewareInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/ApiCallAttemptMonitoringMiddleware.php  
+  inflating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/ApiCallMonitoringMiddleware.php  
+  inflating: /var/www/aws-php-sdk/Aws/ClientSideMonitoring/ConfigurationInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/CommandInterface.php  
+   creating: /var/www/aws-php-sdk/Aws/Lightsail/
+   creating: /var/www/aws-php-sdk/Aws/Lightsail/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Lightsail/Exception/LightsailException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Lightsail/LightsailClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudFormation/
+  inflating: /var/www/aws-php-sdk/Aws/CloudFormation/CloudFormationClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudFormation/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudFormation/Exception/CloudFormationException.php  
+   creating: /var/www/aws-php-sdk/Aws/DataPipeline/
+   creating: /var/www/aws-php-sdk/Aws/DataPipeline/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DataPipeline/Exception/DataPipelineException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DataPipeline/DataPipelineClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Neptune/
+  inflating: /var/www/aws-php-sdk/Aws/Neptune/NeptuneClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Neptune/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Neptune/Exception/NeptuneException.php  
+   creating: /var/www/aws-php-sdk/Aws/Sns/
+  inflating: /var/www/aws-php-sdk/Aws/Sns/Message.php  
+  inflating: /var/www/aws-php-sdk/Aws/Sns/MessageValidator.php  
+   creating: /var/www/aws-php-sdk/Aws/Sns/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Sns/Exception/InvalidSnsMessageException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Sns/Exception/SnsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Sns/SnsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaStore/
+   creating: /var/www/aws-php-sdk/Aws/MediaStore/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MediaStore/Exception/MediaStoreException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MediaStore/MediaStoreClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudHSMV2/
+   creating: /var/www/aws-php-sdk/Aws/CloudHSMV2/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudHSMV2/Exception/CloudHSMV2Exception.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudHSMV2/CloudHSMV2Client.php  
+   creating: /var/www/aws-php-sdk/Aws/ServerlessApplicationRepository/
+   creating: /var/www/aws-php-sdk/Aws/ServerlessApplicationRepository/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ServerlessApplicationRepository/Exception/ServerlessApplicationRepositoryException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ServerlessApplicationRepository/ServerlessApplicationRepositoryClient.php  
+   creating: /var/www/aws-php-sdk/Aws/DataSync/
+   creating: /var/www/aws-php-sdk/Aws/DataSync/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DataSync/Exception/DataSyncException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DataSync/DataSyncClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/MultiRegionClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MediaConvert/
+   creating: /var/www/aws-php-sdk/Aws/MediaConvert/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MediaConvert/Exception/MediaConvertException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MediaConvert/MediaConvertClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CodeStar/
+   creating: /var/www/aws-php-sdk/Aws/CodeStar/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CodeStar/Exception/CodeStarException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CodeStar/CodeStarClient.php  
+   creating: /var/www/aws-php-sdk/Aws/MarketplaceCommerceAnalytics/
+   creating: /var/www/aws-php-sdk/Aws/MarketplaceCommerceAnalytics/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/MarketplaceCommerceAnalytics/Exception/MarketplaceCommerceAnalyticsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/MarketplaceCommerceAnalytics/MarketplaceCommerceAnalyticsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/AutoScalingPlans/
+   creating: /var/www/aws-php-sdk/Aws/AutoScalingPlans/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/AutoScalingPlans/Exception/AutoScalingPlansException.php  
+  inflating: /var/www/aws-php-sdk/Aws/AutoScalingPlans/AutoScalingPlansClient.php  
+   creating: /var/www/aws-php-sdk/Aws/WafRegional/
+  inflating: /var/www/aws-php-sdk/Aws/WafRegional/WafRegionalClient.php  
+   creating: /var/www/aws-php-sdk/Aws/WafRegional/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/WafRegional/Exception/WafRegionalException.php  
+  inflating: /var/www/aws-php-sdk/Aws/AwsClientTrait.php  
+   creating: /var/www/aws-php-sdk/Aws/Macie/
+   creating: /var/www/aws-php-sdk/Aws/Macie/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Macie/Exception/MacieException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Macie/MacieClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Shield/
+   creating: /var/www/aws-php-sdk/Aws/Shield/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Shield/Exception/ShieldException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Shield/ShieldClient.php  
+   creating: /var/www/aws-php-sdk/Aws/LexModelBuildingService/
+  inflating: /var/www/aws-php-sdk/Aws/LexModelBuildingService/LexModelBuildingServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/LexModelBuildingService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/LexModelBuildingService/Exception/LexModelBuildingServiceException.php  
+   creating: /var/www/aws-php-sdk/Aws/Pricing/
+   creating: /var/www/aws-php-sdk/Aws/Pricing/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Pricing/Exception/PricingException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Pricing/PricingClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/EndpointParameterMiddleware.php  
+   creating: /var/www/aws-php-sdk/Aws/CodePipeline/
+  inflating: /var/www/aws-php-sdk/Aws/CodePipeline/CodePipelineClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CodePipeline/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CodePipeline/Exception/CodePipelineException.php  
+   creating: /var/www/aws-php-sdk/Aws/DynamoDb/
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/SessionHandler.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/WriteRequestBatch.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/SessionConnectionInterface.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/NumberValue.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/DynamoDbClient.php  
+   creating: /var/www/aws-php-sdk/Aws/DynamoDb/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/Exception/DynamoDbException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/Marshaler.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/LockingSessionConnection.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/StandardSessionConnection.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/BinaryValue.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/SetValue.php  
+  inflating: /var/www/aws-php-sdk/Aws/DynamoDb/SessionConnectionConfigTrait.php  
+   creating: /var/www/aws-php-sdk/Aws/PinpointEmail/
+   creating: /var/www/aws-php-sdk/Aws/PinpointEmail/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/PinpointEmail/Exception/PinpointEmailException.php  
+  inflating: /var/www/aws-php-sdk/Aws/PinpointEmail/PinpointEmailClient.php  
+   creating: /var/www/aws-php-sdk/Aws/DeviceFarm/
+   creating: /var/www/aws-php-sdk/Aws/DeviceFarm/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DeviceFarm/Exception/DeviceFarmException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DeviceFarm/DeviceFarmClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Health/
+  inflating: /var/www/aws-php-sdk/Aws/Health/HealthClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Health/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Health/Exception/HealthException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Command.php  
+   creating: /var/www/aws-php-sdk/Aws/Chime/
+   creating: /var/www/aws-php-sdk/Aws/Chime/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Chime/Exception/ChimeException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Chime/ChimeClient.php  
+   creating: /var/www/aws-php-sdk/Aws/DLM/
+   creating: /var/www/aws-php-sdk/Aws/DLM/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/DLM/Exception/DLMException.php  
+  inflating: /var/www/aws-php-sdk/Aws/DLM/DLMClient.php  
+   creating: /var/www/aws-php-sdk/Aws/EndpointDiscovery/
+  inflating: /var/www/aws-php-sdk/Aws/EndpointDiscovery/EndpointList.php  
+  inflating: /var/www/aws-php-sdk/Aws/EndpointDiscovery/Configuration.php  
+  inflating: /var/www/aws-php-sdk/Aws/EndpointDiscovery/EndpointDiscoveryMiddleware.php  
+   creating: /var/www/aws-php-sdk/Aws/EndpointDiscovery/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/EndpointDiscovery/Exception/ConfigurationException.php  
+  inflating: /var/www/aws-php-sdk/Aws/EndpointDiscovery/ConfigurationProvider.php  
+  inflating: /var/www/aws-php-sdk/Aws/EndpointDiscovery/ConfigurationInterface.php  
+   creating: /var/www/aws-php-sdk/Aws/Polly/
+   creating: /var/www/aws-php-sdk/Aws/Polly/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Polly/Exception/PollyException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Polly/PollyClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Kafka/
+   creating: /var/www/aws-php-sdk/Aws/Kafka/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Kafka/Exception/KafkaException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Kafka/KafkaClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Route53Domains/
+   creating: /var/www/aws-php-sdk/Aws/Route53Domains/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Route53Domains/Exception/Route53DomainsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Route53Domains/Route53DomainsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/AppMesh/
+   creating: /var/www/aws-php-sdk/Aws/AppMesh/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/AppMesh/Exception/AppMeshException.php  
+  inflating: /var/www/aws-php-sdk/Aws/AppMesh/AppMeshClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Budgets/
+   creating: /var/www/aws-php-sdk/Aws/Budgets/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Budgets/Exception/BudgetsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Budgets/BudgetsClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Comprehend/
+   creating: /var/www/aws-php-sdk/Aws/Comprehend/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Comprehend/Exception/ComprehendException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Comprehend/ComprehendClient.php  
+   creating: /var/www/aws-php-sdk/Aws/LicenseManager/
+   creating: /var/www/aws-php-sdk/Aws/LicenseManager/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/LicenseManager/Exception/LicenseManagerException.php  
+  inflating: /var/www/aws-php-sdk/Aws/LicenseManager/LicenseManagerClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Emr/
+  inflating: /var/www/aws-php-sdk/Aws/Emr/EmrClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Emr/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Emr/Exception/EmrException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Waiter.php  
+   creating: /var/www/aws-php-sdk/Aws/AppSync/
+  inflating: /var/www/aws-php-sdk/Aws/AppSync/AppSyncClient.php  
+   creating: /var/www/aws-php-sdk/Aws/AppSync/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/AppSync/Exception/AppSyncException.php  
+   creating: /var/www/aws-php-sdk/Aws/KinesisAnalyticsV2/
+  inflating: /var/www/aws-php-sdk/Aws/KinesisAnalyticsV2/KinesisAnalyticsV2Client.php  
+   creating: /var/www/aws-php-sdk/Aws/KinesisAnalyticsV2/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/KinesisAnalyticsV2/Exception/KinesisAnalyticsV2Exception.php  
+   creating: /var/www/aws-php-sdk/Aws/Mobile/
+  inflating: /var/www/aws-php-sdk/Aws/Mobile/MobileClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Mobile/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Mobile/Exception/MobileException.php  
+   creating: /var/www/aws-php-sdk/Aws/Swf/
+  inflating: /var/www/aws-php-sdk/Aws/Swf/SwfClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Swf/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Swf/Exception/SwfException.php  
+   creating: /var/www/aws-php-sdk/Aws/S3Control/
+   creating: /var/www/aws-php-sdk/Aws/S3Control/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/S3Control/Exception/S3ControlException.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3Control/S3ControlEndpointMiddleware.php  
+  inflating: /var/www/aws-php-sdk/Aws/S3Control/S3ControlClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Waf/
+  inflating: /var/www/aws-php-sdk/Aws/Waf/WafClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Waf/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Waf/Exception/WafException.php  
+   creating: /var/www/aws-php-sdk/Aws/SageMakerRuntime/
+  inflating: /var/www/aws-php-sdk/Aws/SageMakerRuntime/SageMakerRuntimeClient.php  
+   creating: /var/www/aws-php-sdk/Aws/SageMakerRuntime/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/SageMakerRuntime/Exception/SageMakerRuntimeException.php  
+   creating: /var/www/aws-php-sdk/Aws/GameLift/
+  inflating: /var/www/aws-php-sdk/Aws/GameLift/GameLiftClient.php  
+   creating: /var/www/aws-php-sdk/Aws/GameLift/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/GameLift/Exception/GameLiftException.php  
+   creating: /var/www/aws-php-sdk/Aws/FMS/
+   creating: /var/www/aws-php-sdk/Aws/FMS/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/FMS/Exception/FMSException.php  
+  inflating: /var/www/aws-php-sdk/Aws/FMS/FMSClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/ResponseContainerInterface.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudSearch/
+  inflating: /var/www/aws-php-sdk/Aws/CloudSearch/CloudSearchClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudSearch/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudSearch/Exception/CloudSearchException.php  
+   creating: /var/www/aws-php-sdk/Aws/ConfigService/
+  inflating: /var/www/aws-php-sdk/Aws/ConfigService/ConfigServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ConfigService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ConfigService/Exception/ConfigServiceException.php  
+   creating: /var/www/aws-php-sdk/Aws/PI/
+   creating: /var/www/aws-php-sdk/Aws/PI/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/PI/Exception/PIException.php  
+  inflating: /var/www/aws-php-sdk/Aws/PI/PIClient.php  
+   creating: /var/www/aws-php-sdk/Aws/XRay/
+   creating: /var/www/aws-php-sdk/Aws/XRay/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/XRay/Exception/XRayException.php  
+  inflating: /var/www/aws-php-sdk/Aws/XRay/XRayClient.php  
+   creating: /var/www/aws-php-sdk/Aws/SecurityHub/
+   creating: /var/www/aws-php-sdk/Aws/SecurityHub/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/SecurityHub/Exception/SecurityHubException.php  
+  inflating: /var/www/aws-php-sdk/Aws/SecurityHub/SecurityHubClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Acm/
+   creating: /var/www/aws-php-sdk/Aws/Acm/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Acm/Exception/AcmException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Acm/AcmClient.php  
+   creating: /var/www/aws-php-sdk/Aws/RoboMaker/
+   creating: /var/www/aws-php-sdk/Aws/RoboMaker/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/RoboMaker/Exception/RoboMakerException.php  
+  inflating: /var/www/aws-php-sdk/Aws/RoboMaker/RoboMakerClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/DoctrineCacheAdapter.php  
+  inflating: /var/www/aws-php-sdk/Aws/ClientResolver.php  
+   creating: /var/www/aws-php-sdk/Aws/CodeDeploy/
+   creating: /var/www/aws-php-sdk/Aws/CodeDeploy/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CodeDeploy/Exception/CodeDeployException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CodeDeploy/CodeDeployClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/HashingStream.php  
+   creating: /var/www/aws-php-sdk/Aws/ServiceCatalog/
+   creating: /var/www/aws-php-sdk/Aws/ServiceCatalog/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ServiceCatalog/Exception/ServiceCatalogException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ServiceCatalog/ServiceCatalogClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ServiceDiscovery/
+   creating: /var/www/aws-php-sdk/Aws/ServiceDiscovery/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ServiceDiscovery/Exception/ServiceDiscoveryException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ServiceDiscovery/ServiceDiscoveryClient.php  
+   creating: /var/www/aws-php-sdk/Aws/LexRuntimeService/
+   creating: /var/www/aws-php-sdk/Aws/LexRuntimeService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/LexRuntimeService/Exception/LexRuntimeServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/LexRuntimeService/LexRuntimeServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Rekognition/
+   creating: /var/www/aws-php-sdk/Aws/Rekognition/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Rekognition/Exception/RekognitionException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Rekognition/RekognitionClient.php  
+   creating: /var/www/aws-php-sdk/Aws/Appstream/
+   creating: /var/www/aws-php-sdk/Aws/Appstream/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Appstream/Exception/AppstreamException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Appstream/AppstreamClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/RetryMiddleware.php  
+   creating: /var/www/aws-php-sdk/Aws/Translate/
+   creating: /var/www/aws-php-sdk/Aws/Translate/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/Translate/Exception/TranslateException.php  
+  inflating: /var/www/aws-php-sdk/Aws/Translate/TranslateClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ApplicationAutoScaling/
+   creating: /var/www/aws-php-sdk/Aws/ApplicationAutoScaling/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ApplicationAutoScaling/Exception/ApplicationAutoScalingException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ApplicationAutoScaling/ApplicationAutoScalingClient.php  
+   creating: /var/www/aws-php-sdk/Aws/ElasticLoadBalancingV2/
+  inflating: /var/www/aws-php-sdk/Aws/ElasticLoadBalancingV2/ElasticLoadBalancingV2Client.php  
+   creating: /var/www/aws-php-sdk/Aws/ElasticLoadBalancingV2/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ElasticLoadBalancingV2/Exception/ElasticLoadBalancingV2Exception.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudTrail/
+  inflating: /var/www/aws-php-sdk/Aws/CloudTrail/LogFileReader.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudTrail/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudTrail/Exception/CloudTrailException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudTrail/CloudTrailClient.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudTrail/LogRecordIterator.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudTrail/LogFileIterator.php  
+   creating: /var/www/aws-php-sdk/Aws/ElasticsearchService/
+   creating: /var/www/aws-php-sdk/Aws/ElasticsearchService/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/ElasticsearchService/Exception/ElasticsearchServiceException.php  
+  inflating: /var/www/aws-php-sdk/Aws/ElasticsearchService/ElasticsearchServiceClient.php  
+   creating: /var/www/aws-php-sdk/Aws/CloudWatchEvents/
+   creating: /var/www/aws-php-sdk/Aws/CloudWatchEvents/Exception/
+  inflating: /var/www/aws-php-sdk/Aws/CloudWatchEvents/Exception/CloudWatchEventsException.php  
+  inflating: /var/www/aws-php-sdk/Aws/CloudWatchEvents/CloudWatchEventsClient.php  
+   creating: /var/www/aws-php-sdk/Psr/
+   creating: /var/www/aws-php-sdk/Psr/Http/
+   creating: /var/www/aws-php-sdk/Psr/Http/Message/
+  inflating: /var/www/aws-php-sdk/Psr/Http/Message/RequestInterface.php  
+  inflating: /var/www/aws-php-sdk/Psr/Http/Message/UploadedFileInterface.php  
+  inflating: /var/www/aws-php-sdk/Psr/Http/Message/StreamInterface.php  
+  inflating: /var/www/aws-php-sdk/Psr/Http/Message/MessageInterface.php  
+  inflating: /var/www/aws-php-sdk/Psr/Http/Message/ServerRequestInterface.php  
+  inflating: /var/www/aws-php-sdk/Psr/Http/Message/ResponseInterface.php  
+  inflating: /var/www/aws-php-sdk/Psr/Http/Message/UriInterface.php  
+  inflating: /var/www/aws-php-sdk/CHANGELOG.md  
++ aws s3 cp s3://otus-test/s3-test.php /var/www/html/index.php
+Completed 496 Bytes/496 Bytes (1009 Bytes/s) with 1 file(s) remainingdownload: s3://otus-test/s3-test.php to var/www/html/index.php       
++ rm -rvf /var/www/html/index.html
+removed '/var/www/html/index.html'
++ service apache2 restart
+Cloud-init v. 19.2-36-g059d049c-0ubuntu1~18.04.1 running 'modules:final' at Thu, 31 Oct 2019 09:10:24 +0000. Up 25.83 seconds.
+Cloud-init v. 19.2-36-g059d049c-0ubuntu1~18.04.1 finished at Thu, 31 Oct 2019 09:11:42 +0000. Datasource DataSourceEc2Local.  Up 103.27 seconds
